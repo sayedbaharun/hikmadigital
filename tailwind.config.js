@@ -8,25 +8,75 @@ export default {
         'arabic': ['Noto Sans Arabic', 'Inter', 'sans-serif'],
       },
       colors: {
-        // Steve Jobs Color Discipline - 4 Colors Only
-        primary: '#000000',        // Pure black - for text
-        secondary: '#6B7280',      // Single gray - for supporting text  
-        accent: '#0071E3',         // Hikma blue - ONLY for interactions
-        background: '#FFFFFF',     // Pure white - for backgrounds
-        
-        // Subtle variations when absolutely necessary
-        neutral: {
-          50: '#FAFAFA',           // Off-white backgrounds
-          100: '#F5F5F7',          // Section backgrounds
-          200: '#E5E5E7',          // Borders
-          300: '#D1D1D6',          // Disabled states
+        // Dubai-appropriate color palette
+        primary: {
+          DEFAULT: '#1F25BF',
+          50: '#E0E2FA',
+          100: '#C8CAF6',
+          200: '#989CEE',
+          300: '#686DE7',
+          400: '#373EDF',
+          500: '#1F25BF',
+          600: '#171C8F',
+          700: '#121670',
+          800: '#0D1051',
+          900: '#080A33',
+          950: '#060723'
         },
         
-        // Functional colors - minimal use only
-        success: '#34C759',
+        // Gold accent for luxury/premium feel
+        gold: {
+          DEFAULT: '#E9C46A',
+          light: '#F4D89C',
+          dark: '#D4A84B'
+        },
+        
+        // Text colors
+        text: {
+          primary: '#37474F',
+          secondary: '#606F7B',
+          light: '#8795A1',
+          inverse: '#FFFFFF'
+        },
+        
+        // Background colors
+        background: {
+          DEFAULT: '#F5F7FA',
+          white: '#FFFFFF',
+          light: '#FAFBFC',
+          dark: '#E8ECF0'
+        },
+        
+        // Success/Innovation green
+        emerald: {
+          DEFAULT: '#43A047',
+          light: '#66BB6A',
+          dark: '#388E3C'
+        },
+        
+        // Neutral grays
+        neutral: {
+          50: '#FAFAFA',
+          100: '#F5F5F7',
+          200: '#E5E5E7',
+          300: '#D1D1D6',
+          400: '#A1A1A6',
+          500: '#8E8E93',
+          600: '#636366',
+          700: '#48484A',
+          800: '#363638',
+          900: '#1C1C1E'
+        },
+        
+        // Functional colors
+        success: '#43A047',
         error: '#FF3B30',
         
-        // UAE compliance only
+        // Keep legacy colors for compatibility
+        secondary: '#606F7B',
+        accent: '#E9C46A',
+        
+        // UAE compliance
         uae: {
           red: '#CE1126',
           green: '#009639',

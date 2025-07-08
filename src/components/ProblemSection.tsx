@@ -1,27 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useContent } from '../hooks/useContent';
+import { ProblemContent } from '../content/types';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const ProblemSection: React.FC = () => {
-  const { language, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
+  const content = useContent<ProblemContent>('homepage.problems');
   const [currentPhase, setCurrentPhase] = useState(0);
   
   const { ref: sectionRef, isInView } = useScrollReveal({ once: false, threshold: 0.5 });
   const { ref: problemRef, isInView: problemInView } = useScrollReveal({ once: false, delay: 500 });
   const { ref: solutionRef, isInView: solutionInView } = useScrollReveal({ once: false, delay: 1500 });
-
-  const problems = language === 'ar' 
-    ? [
-        'العمليات اليدوية تلتهم الأرباح.',
-        'خسارة العملاء بسبب البطء في الاستجابة.',
-        'البيانات في كل مكان، والرؤى في لا مكان.'
-      ]
-    : [
-        'Manual processes eating profits.',
-        'Lost customers to slow response.',
-        'Data everywhere, insights nowhere.'
-      ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -54,12 +45,10 @@ const ProblemSection: React.FC = () => {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-24 ${
+          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-light text-primary mb-24 ${
             isRTL ? 'font-arabic' : ''
           }`}>
-            {language === 'ar' 
-              ? 'كل عمل في دبي يواجه نفس التحدي.'
-              : 'Every Dubai business faces the same challenge.'}
+            {content.intro}
           </h2>
         </motion.div>
 
@@ -71,11 +60,11 @@ const ProblemSection: React.FC = () => {
           animate={problemInView ? "visible" : "hidden"}
           className="space-y-8 mb-32"
         >
-          {problems.map((problem, index) => (
+          {content.problems.map((problem, index) => (
             <motion.p
               key={index}
               variants={itemVariants}
-              className={`text-2xl md:text-3xl lg:text-4xl text-gray-700 font-light leading-relaxed ${
+              className={`text-2xl md:text-3xl lg:text-4xl text-text-primary font-light leading-relaxed ${
                 isRTL ? 'font-arabic' : ''
               }`}
             >
@@ -92,20 +81,20 @@ const ProblemSection: React.FC = () => {
           transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="mt-32"
         >
-          <p className={`text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-6 ${
+          <p className={`text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-6 ${
             isRTL ? 'font-arabic' : ''
           }`}>
-            {language === 'ar' ? 'ماذا لو استطاع الذكاء الاصطناعي حل هذا؟' : 'What if AI could solve this?'}
+            {content.solution}
           </p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={solutionInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5, duration: 1 }}
-            className={`text-2xl md:text-3xl lg:text-4xl font-light text-gray-600 ${
+            className={`text-2xl md:text-3xl lg:text-4xl font-light text-gold ${
               isRTL ? 'font-arabic' : ''
             }`}
           >
-            {language === 'ar' ? 'مع لمسة إنسانية؟' : 'With a human touch?'}
+            {content.solutionSubtext}
           </motion.p>
         </motion.div>
 

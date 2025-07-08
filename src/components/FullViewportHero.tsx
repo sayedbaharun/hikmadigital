@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useContent } from '../hooks/useContent';
+import { HeroContent } from '../content/types';
+import { isFeatureEnabled } from '../content/config/features';
 import { Play, Volume2, VolumeX } from 'lucide-react';
 
 interface FullViewportHeroProps {
@@ -8,9 +11,11 @@ interface FullViewportHeroProps {
 }
 
 const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) => {
-  const { language, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
+  const content = useContent<HeroContent>('homepage.hero');
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const [showVideo, setShowVideo] = useState(false);
+  const enableVideo = isFeatureEnabled('showVideo');
 
   // Text animations
   const containerVariants = {
@@ -50,10 +55,10 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-950">
       {/* Background Video/Gradient */}
       <div className="absolute inset-0 z-0">
-        {showVideo ? (
+        {showVideo && enableVideo && content.video ? (
           <video
             autoPlay
             loop
@@ -61,14 +66,14 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-30"
           >
-            <source src="/videos/ai-visualization.mp4" type="video/mp4" />
+            <source src={content.video.url} type="video/mp4" />
           </video>
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-black to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-950 via-primary-900 to-primary-800" />
         )}
         
         {/* Overlay gradient for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-900/50 to-transparent" />
       </div>
 
       {/* Content */}
@@ -84,11 +89,11 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
             variants={itemVariants}
             className="inline-flex items-center space-x-2"
           >
-            <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+            <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
             <span className={`text-white/80 text-lg font-light tracking-wide ${
               isRTL ? 'font-arabic' : ''
             }`}>
-              {language === 'ar' ? 'حكمة ديجيتال' : 'Hikma Digital'}
+              {content.badge}
             </span>
           </motion.div>
 
@@ -99,17 +104,11 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
               isRTL ? 'font-arabic' : ''
             }`}
           >
-            {language === 'ar' ? (
-              <>
-                <span className="block">شريكك في الذكاء الاصطناعي.</span>
-                <span className="block text-white/80">بلمسة إنسانية.</span>
-              </>
-            ) : (
-              <>
-                <span className="block">Your AI Partner.</span>
-                <span className="block text-white/80">Human Touch.</span>
-              </>
-            )}
+            {content.headline.split('.').map((line, index) => (
+              <span key={index} className={`block ${index === 1 ? 'text-gold-light' : ''}`}>
+                {line}{index === 0 ? '.' : ''}
+              </span>
+            ))}
           </motion.h1>
 
           {/* Subheadline */}
@@ -119,9 +118,7 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
               isRTL ? 'font-arabic' : ''
             }`}
           >
-            {language === 'ar'
-              ? 'حوّل أعمالك في دبي خلال 30 يوماً'
-              : 'Transform Dubai Business in 30 Days'}
+            {content.subheadline}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -129,26 +126,28 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
             variants={buttonVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
           >
-            <button
-              onClick={() => setShowVideo(!showVideo)}
-              className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm text-white 
-                         rounded-full border border-white/20 hover:bg-white/20 
-                         transition-all duration-300 flex items-center gap-3"
-            >
-              <Play className="w-5 h-5" />
-              <span className={isRTL ? 'font-arabic' : ''}>
-                {language === 'ar' ? 'شاهد الفيديو' : 'Watch Film'}
-              </span>
-            </button>
+            {enableVideo && (
+              <button
+                onClick={() => setShowVideo(!showVideo)}
+                className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm text-white 
+                           rounded-full border border-gold/30 hover:border-gold hover:bg-gold/10 
+                           transition-all duration-300 flex items-center gap-3"
+              >
+                <Play className="w-5 h-5" />
+                <span className={isRTL ? 'font-arabic' : ''}>
+                  {content.cta.secondary.label}
+                </span>
+              </button>
+            )}
 
             <button
-              onClick={() => openContactForm('assessment')}
-              className="group relative px-8 py-4 bg-white text-black rounded-full 
-                         hover:bg-white/90 transition-all duration-300 
-                         transform hover:scale-105 shadow-2xl"
+              onClick={() => openContactForm(content.cta.primary.action as any)}
+              className="group relative px-8 py-4 bg-gradient-to-r from-gold to-gold-light text-primary-950 
+                         rounded-full hover:shadow-2xl hover:shadow-gold/25 
+                         transition-all duration-300 transform hover:scale-105 font-medium"
             >
-              <span className={`font-medium ${isRTL ? 'font-arabic' : ''}`}>
-                {language === 'ar' ? 'ابدأ مجاناً' : 'Start Free'}
+              <span className={isRTL ? 'font-arabic' : ''}>
+                {content.cta.primary.label}
               </span>
             </button>
           </motion.div>
