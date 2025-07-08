@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Steve Jobs Level Precision */
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-primary antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  }
+  
+  /* Perfect Typography Hierarchy */
+  h1 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-xl font-semibold;
+  }
+  
+  p {
+    @apply text-base font-normal leading-relaxed;
+  }
+  
+  /* Remove default margins - we control spacing */
+  h1, h2, h3, h4, h5, h6, p {
+    @apply m-0;
+  }
+}
+
+@layer components {
+  /* Perfect Button System - 2 Variants Only */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-normal rounded-lg transition-opacity duration-200;
+    height: 48px; /* Exact height */
+  }
+  
+  .btn-primary {
+    @apply btn bg-accent text-background hover:opacity-90;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-transparent text-accent border border-accent hover:bg-accent hover:text-background;
+  }
+  
+  /* Minimal Card - Only When Necessary */
+  .card {
+    @apply bg-background border border-neutral-200 rounded-lg;
+  }
+  
+  /* Focus States - Accessible */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+  
+  /* Perfect Spacing Classes */
+  .section {
+    @apply py-12 md:py-16;
+  }
+  
+  .container-custom {
+    @apply max-w-4xl mx-auto px-4;
+  }
+}
+
+@layer utilities {
+  /* Remove any visual noise */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
