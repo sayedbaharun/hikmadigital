@@ -1,9 +1,13 @@
-import { createClient } from '@supabase/supabase-js';
+// Commented out for marketing site - no database needed
+// import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+// const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+// Mock supabase for marketing site
+export const supabase = null;
 
 // Database Types
 export interface Company {
@@ -143,120 +147,63 @@ export interface BusinessTransformation {
   status: string;
 }
 
-// Database Functions
+// Database Functions - Commented out for marketing site
 export const createConversation = async (data: Partial<Conversation>) => {
-  const { data: conversation, error } = await supabase
-    .from('conversations')
-    .insert(data)
-    .select()
-    .single();
-  
-  return { data: conversation, error };
+  // Mock response for marketing site
+  return { data: null, error: new Error('Database not available in marketing site') };
 };
 
 export const addMessage = async (data: Partial<Message>) => {
-  const { data: message, error } = await supabase
-    .from('messages')
-    .insert(data)
-    .select()
-    .single();
-  
-  return { data: message, error };
+  // Mock response for marketing site
+  return { data: null, error: new Error('Database not available in marketing site') };
 };
 
 export const getCompanyConversations = async (companyId: string) => {
-  const { data, error } = await supabase
-    .from('conversations')
-    .select(`
-      *,
-      messages (*)
-    `)
-    .eq('company_id', companyId)
-    .order('created_at', { ascending: false });
-  
-  return { data, error };
+  // Mock response for marketing site
+  return { data: [], error: null };
 };
 
 export const updateCompanyMetrics = async (companyId: string, metrics: Record<string, any>) => {
-  const { data, error } = await supabase
-    .from('companies')
-    .update({ 
-      current_metrics: metrics,
-      updated_at: new Date().toISOString()
-    })
-    .eq('id', companyId)
-    .select()
-    .single();
-  
-  return { data, error };
+  // Mock response for marketing site
+  return { data: null, error: new Error('Database not available in marketing site') };
 };
 
 export const calculateCompanyROI = async (companyId: string) => {
-  const { data, error } = await supabase
-    .rpc('calculate_company_roi', { company_uuid: companyId });
-  
-  return { data, error };
+  // Mock response for marketing site
+  return { data: { roi: 250 }, error: null };
 };
 
 export const updateAIReadinessScore = async (companyId: string) => {
-  const { data, error } = await supabase
-    .rpc('update_ai_readiness_score', { company_uuid: companyId });
-  
-  return { data, error };
+  // Mock response for marketing site
+  return { data: { score: 75 }, error: null };
 };
 
 export const getCompanyPerformanceDashboard = async () => {
-  const { data, error } = await supabase
-    .from('company_performance_dashboard')
-    .select('*');
-  
-  return { data, error };
+  // Mock response for marketing site
+  return { data: [], error: null };
 };
 
 export const getAIAgentPerformance = async () => {
-  const { data, error } = await supabase
-    .from('ai_agent_performance')
-    .select('*');
-  
-  return { data, error };
+  // Mock response for marketing site
+  return { data: [], error: null };
 };
 
 export const getMonthlyRevenueAnalytics = async () => {
-  const { data, error } = await supabase
-    .from('monthly_revenue_analytics')
-    .select('*')
-    .limit(12);
-  
-  return { data, error };
+  // Mock response for marketing site
+  return { data: [], error: null };
 };
 
-// Real-time subscriptions
+// Real-time subscriptions - Mocked for marketing site
 export const subscribeToConversations = (companyId: string, callback: (payload: any) => void) => {
-  return supabase
-    .channel('conversations')
-    .on('postgres_changes', 
-      { 
-        event: '*', 
-        schema: 'public', 
-        table: 'conversations',
-        filter: `company_id=eq.${companyId}`
-      }, 
-      callback
-    )
-    .subscribe();
+  // Return mock subscription
+  return {
+    unsubscribe: () => {}
+  };
 };
 
 export const subscribeToMessages = (conversationId: string, callback: (payload: any) => void) => {
-  return supabase
-    .channel('messages')
-    .on('postgres_changes', 
-      { 
-        event: '*', 
-        schema: 'public', 
-        table: 'messages',
-        filter: `conversation_id=eq.${conversationId}`
-      }, 
-      callback
-    )
-    .subscribe();
+  // Return mock subscription
+  return {
+    unsubscribe: () => {}
+  };
 };

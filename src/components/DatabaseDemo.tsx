@@ -26,34 +26,45 @@ const DatabaseDemo: React.FC = () => {
   }, []);
 
   const checkConnection = async () => {
-    try {
-      const { data, error } = await supabase.from('companies').select('count').limit(1);
-      setIsConnected(!error);
-    } catch (error) {
-      setIsConnected(false);
-    }
+    // Mock connection for marketing site
+    setIsConnected(true);
   };
 
   const loadDemoData = async () => {
     setLoading(true);
     try {
-      // Load companies
-      const { data: companiesData } = await supabase
-        .from('companies')
-        .select('*')
-        .limit(5);
-      setCompanies(companiesData || []);
+      // Mock data for marketing site
+      setCompanies([
+        { id: '1', company_name: 'Demo Restaurant LLC', industry: 'Restaurant', ai_readiness_score: 75 },
+        { id: '2', company_name: 'Al Futtaim Retail', industry: 'Retail', ai_readiness_score: 82 },
+        { id: '3', company_name: 'Dubai Logistics Co', industry: 'Logistics', ai_readiness_score: 68 }
+      ]);
 
-      // Load conversations
-      const { data: conversationsData } = await supabase
-        .from('conversations')
-        .select('*, messages(*)')
-        .limit(10);
-      setConversations(conversationsData || []);
+      // Mock conversations
+      setConversations([
+        { 
+          id: '1', 
+          title: 'Strategy Discussion', 
+          company_id: '1',
+          total_messages: 15,
+          satisfaction_rating: 4.8
+        },
+        {
+          id: '2',
+          title: 'AI Implementation Plan',
+          company_id: '2',
+          total_messages: 22,
+          satisfaction_rating: 4.9
+        }
+      ]);
 
-      // Load performance dashboard
-      const { data: performanceData } = await getCompanyPerformanceDashboard();
-      setPerformanceData(performanceData);
+      // Mock performance data
+      setPerformanceData({
+        totalCompanies: 48,
+        activeConversations: 127,
+        avgROI: 250,
+        satisfactionScore: 4.7
+      });
 
     } catch (error) {
       console.error('Error loading demo data:', error);
@@ -63,39 +74,17 @@ const DatabaseDemo: React.FC = () => {
   };
 
   const createDemoConversation = async () => {
-    const demoCompanyId = companies[0]?.id;
-    if (!demoCompanyId) return;
-
-    const { data: conversation } = await createConversation({
-      company_id: demoCompanyId,
-      conversation_type: 'demo',
-      title: language === 'ar' ? 'جلسة تجريبية' : 'Demo Session',
-      primary_language: language,
-      industry_context: 'restaurant'
-    });
-
-    if (conversation) {
-      await addMessage({
-        conversation_id: conversation.id,
-        sender_type: 'ai_agent',
-        content: language === 'ar' 
-          ? 'مرحباً! أنا حكمة، مدربك في الأعمال. كيف يمكنني مساعدتك اليوم؟'
-          : 'Hello! I\'m Hikma, your business coach. How can I help you today?',
-        detected_language: language,
-        response_time_seconds: 1.2
-      });
-
-      loadDemoData(); // Refresh data
-    }
+    // Mock demo for marketing site
+    alert(language === 'ar' 
+      ? 'هذا عرض توضيحي. في النسخة الكاملة، ستتمكن من إنشاء محادثات حقيقية.'
+      : 'This is a demo. In the full version, you\'ll be able to create real conversations.');
   };
 
   const calculateROIDemo = async () => {
-    const demoCompanyId = companies[0]?.id;
-    if (!demoCompanyId) return;
-
-    await calculateCompanyROI(demoCompanyId);
-    await updateAIReadinessScore(demoCompanyId);
-    loadDemoData(); // Refresh data
+    // Mock ROI calculation for marketing site
+    alert(language === 'ar' 
+      ? 'عائد الاستثمار المحسوب: 250٪ في 6 أشهر'
+      : 'Calculated ROI: 250% in 6 months');
   };
 
   return (

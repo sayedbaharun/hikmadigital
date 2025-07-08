@@ -21,7 +21,7 @@ import {
   Shield
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { supabase } from '../lib/supabase';
+// import { supabase } from '../lib/supabase'; // Removed for marketing site
 
 interface AssessmentData {
   // Business Information
@@ -459,33 +459,22 @@ const Assessment: React.FC = () => {
     };
   };
 
-  // Save lead to database
+  // Save lead to database - Mocked for marketing site
   const saveLead = async (assessmentData: AssessmentData, leadData: LeadData, results: AssessmentResults) => {
     try {
-      const { data, error } = await supabase
-        .from('sme_leads')
-        .insert({
-          company_name: leadData.companyName,
-          company_name_ar: leadData.companyNameAr,
-          contact_name: leadData.contactName,
-          email: leadData.email,
-          phone: leadData.phone,
-          whatsapp_number: leadData.whatsappNumber,
-          industry: assessmentData.industry,
-          emirates: leadData.emirates,
-          monthly_revenue_range: assessmentData.monthlyRevenue,
-          employee_count_range: assessmentData.employeeCount,
-          preferred_language: leadData.preferredLanguage,
-          ai_readiness_score: results.aiReadinessScore,
-          assessment_responses: assessmentData,
-          personalized_plan: results.recommendations,
-          lead_source: 'ai_readiness_assessment',
-          lead_status: 'new',
-          follow_up_priority: results.aiReadinessScore > 70 ? 'HIGH' : results.aiReadinessScore > 40 ? 'MEDIUM' : 'LOW',
-          conversion_probability: Math.min(95, Math.max(10, results.aiReadinessScore + 10))
-        });
-
-      if (error) throw error;
+      // For marketing site, just log the data
+      console.log('Lead data (marketing site):', {
+        assessmentData,
+        leadData,
+        results
+      });
+      
+      // Show success message
+      toast.success(
+        language === 'ar' 
+          ? 'تم حفظ تقييمك بنجاح! سنتواصل معك قريباً.'
+          : 'Your assessment has been saved! We\'ll contact you soon.'
+      );
       
       // Increment lead counter
       setLeadCounter(prev => prev + 1);

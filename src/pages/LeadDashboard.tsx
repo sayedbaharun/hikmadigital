@@ -18,7 +18,7 @@ import {
   Building
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { supabase } from '../lib/supabase';
+// import { supabase } from '../lib/supabase'; // Removed for marketing site
 
 interface Lead {
   id: string;
@@ -74,13 +74,58 @@ const LeadDashboard: React.FC = () => {
 
   const loadLeads = async () => {
     try {
-      const { data, error } = await supabase
-        .from('sme_leads')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-      setLeads(data || []);
+      // Mock data for marketing site
+      const mockLeads: Lead[] = [
+        {
+          id: '1',
+          created_at: new Date().toISOString(),
+          company_name: 'Dubai Delights Restaurant',
+          contact_name: 'Ahmed Hassan',
+          email: 'ahmed@dubaidel.ae',
+          phone: '+971 50 123 4567',
+          whatsapp_number: '+971 50 123 4567',
+          industry: 'restaurant',
+          emirates: 'dubai',
+          monthly_revenue_range: '100k_200k',
+          employee_count_range: '16_50',
+          preferred_language: 'en',
+          ai_readiness_score: 75,
+          assessment_responses: {},
+          personalized_plan: [],
+          lead_source: 'ai_readiness_assessment',
+          lead_status: 'new',
+          follow_up_priority: 'HIGH',
+          conversion_probability: 85,
+          total_touchpoints: 0,
+          consultation_scheduled: false,
+          consultation_completed: false
+        },
+        {
+          id: '2',
+          created_at: new Date(Date.now() - 86400000).toISOString(),
+          company_name: 'Al Futtaim Retail',
+          company_name_ar: 'الفطيم للتجزئة',
+          contact_name: 'Sara Al Maktoum',
+          email: 'sara@alfuttaim.ae',
+          phone: '+971 4 567 8901',
+          industry: 'retail',
+          emirates: 'dubai',
+          monthly_revenue_range: '500k_1m',
+          employee_count_range: '51_100',
+          preferred_language: 'ar',
+          ai_readiness_score: 82,
+          assessment_responses: {},
+          personalized_plan: [],
+          lead_source: 'ai_readiness_assessment',
+          lead_status: 'contacted',
+          follow_up_priority: 'HIGH',
+          conversion_probability: 90,
+          total_touchpoints: 2,
+          consultation_scheduled: true,
+          consultation_completed: false
+        }
+      ];
+      setLeads(mockLeads);
     } catch (error) {
       console.error('Error loading leads:', error);
     } finally {
@@ -119,16 +164,15 @@ const LeadDashboard: React.FC = () => {
 
   const updateLeadStatus = async (leadId: string, status: string) => {
     try {
-      const { error } = await supabase
-        .from('sme_leads')
-        .update({ 
-          lead_status: status,
-          last_contact_date: new Date().toISOString()
-        })
-        .eq('id', leadId);
-
-      if (error) throw error;
-      loadLeads(); // Refresh data
+      // Mock update for marketing site
+      setLeads(prevLeads => 
+        prevLeads.map(lead => 
+          lead.id === leadId 
+            ? { ...lead, lead_status: status, last_contact_date: new Date().toISOString() }
+            : lead
+        )
+      );
+      alert(language === 'ar' ? 'تم تحديث حالة العميل المحتمل' : 'Lead status updated');
     } catch (error) {
       console.error('Error updating lead status:', error);
     }
@@ -136,16 +180,19 @@ const LeadDashboard: React.FC = () => {
 
   const scheduleFollowUp = async (leadId: string, date: string) => {
     try {
-      const { error } = await supabase
-        .from('sme_leads')
-        .update({ 
-          next_follow_up_date: date,
-          total_touchpoints: leads.find(l => l.id === leadId)?.total_touchpoints + 1 || 1
-        })
-        .eq('id', leadId);
-
-      if (error) throw error;
-      loadLeads(); // Refresh data
+      // Mock update for marketing site
+      setLeads(prevLeads => 
+        prevLeads.map(lead => 
+          lead.id === leadId 
+            ? { 
+                ...lead, 
+                next_follow_up_date: date,
+                total_touchpoints: (lead.total_touchpoints || 0) + 1
+              }
+            : lead
+        )
+      );
+      alert(language === 'ar' ? 'تم جدولة المتابعة' : 'Follow-up scheduled');
     } catch (error) {
       console.error('Error scheduling follow-up:', error);
     }
