@@ -3,10 +3,13 @@ import { BilingualText } from '../content/types';
 
 // Import all content modules
 import { homepageContent } from '../content/pages/homepage';
+import { clientsContent } from '../content/site/clients';
 
 // Content registry
 const contentRegistry = {
   'homepage': homepageContent,
+  'pages.homepage': homepageContent,
+  'site.clients': clientsContent,
   // Add more pages here as they are created
 };
 

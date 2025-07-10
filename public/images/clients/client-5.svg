@@ -1,0 +1,8 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(60, 20)">
+    <circle r="15" fill="#43A047"/>
+    <circle r="10" fill="white"/>
+    <circle r="5" fill="#43A047"/>
+  </g>
+  <text x="60" y="36" text-anchor="middle" fill="#37474F" font-family="Arial, sans-serif" font-size="8" font-weight="600">ETISALAT</text>
+</svg>

@@ -56,6 +56,19 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-950">
+      {/* Background Pattern */}
+      {content.backgroundPattern && (
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${content.backgroundPattern.value})`,
+            backgroundRepeat: 'repeat',
+            backgroundPosition: content.backgroundPattern.position || 'center',
+            opacity: content.backgroundPattern.opacity || 0.05
+          }}
+        />
+      )}
+      
       {/* Background Video/Gradient */}
       <div className="absolute inset-0 z-0">
         {showVideo && enableVideo && content.video ? (

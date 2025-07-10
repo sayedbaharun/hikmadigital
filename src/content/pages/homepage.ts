@@ -32,8 +32,14 @@ export const homepageContent: HomepageContent = {
     },
     video: {
       url: '/videos/ai-visualization.mp4',
-      poster: '/images/video-poster.jpg',
+      poster: '/images/hero/video-poster.svg',
       autoplay: false
+    },
+    backgroundPattern: {
+      type: 'pattern',
+      value: '/images/patterns/geometric-pattern.svg',
+      opacity: 0.05,
+      position: 'center'
     }
   },
   
@@ -106,7 +112,15 @@ export const homepageContent: HomepageContent = {
           ar: 'مصممة خصيصاً لاحتياجاتك'
         },
         link: '/ai-agents',
-        gradient: 'from-blue-500 to-purple-500'
+        gradient: 'from-blue-500 to-purple-500',
+        illustration: {
+          src: '/images/illustrations/ai-agent.svg',
+          alt: {
+            en: 'AI Agent Illustration',
+            ar: 'رسم توضيحي لوكيل الذكاء الاصطناعي'
+          },
+          loading: 'eager'
+        }
       },
       {
         id: 'human-coaches',
@@ -120,7 +134,15 @@ export const homepageContent: HomepageContent = {
           ar: 'إرشاد خبير عندما تحتاجه'
         },
         link: '/team',
-        gradient: 'from-purple-500 to-pink-500'
+        gradient: 'from-purple-500 to-pink-500',
+        illustration: {
+          src: '/images/illustrations/human-coach.svg',
+          alt: {
+            en: 'Human Coach Illustration',
+            ar: 'رسم توضيحي للمدرب البشري'
+          },
+          loading: 'eager'
+        }
       }
     ]
   },

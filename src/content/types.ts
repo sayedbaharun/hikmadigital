@@ -24,6 +24,8 @@ export interface HeroContent {
     poster?: string;
     autoplay?: boolean;
   };
+  backgroundImage?: ImageContent;
+  backgroundPattern?: PatternContent;
 }
 
 // Trust indicators
@@ -66,6 +68,7 @@ export interface SolutionCard {
   description: BilingualText;
   link: string;
   gradient: string;
+  illustration?: ImageContent;
 }
 
 export interface SolutionsContent {
@@ -129,6 +132,33 @@ export interface ContentVariant<T> {
   id: string;
   weight: number; // 0-100 percentage
   content: T;
+}
+
+// Image content
+export interface ImageContent {
+  src: string;
+  srcSet?: string; // Responsive images
+  alt: BilingualText;
+  caption?: BilingualText;
+  loading?: 'eager' | 'lazy';
+  priority?: boolean;
+  placeholder?: string; // Base64 blur placeholder
+}
+
+// Pattern/Background
+export interface PatternContent {
+  type: 'gradient' | 'pattern' | 'image';
+  value: string; // CSS gradient, SVG path, or image URL
+  opacity?: number;
+  position?: string;
+}
+
+// Client logo
+export interface ClientLogo {
+  name: string;
+  logo: string; // SVG or image path
+  url?: string;
+  featured?: boolean;
 }
 
 // Feature flags

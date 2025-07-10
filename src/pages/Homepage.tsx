@@ -5,7 +5,9 @@ import TrustStrip from '../components/TrustStrip';
 import ProblemSection from '../components/ProblemSection';
 import SolutionCards from '../components/SolutionCards';
 import MetricsSection from '../components/MetricsSection';
-import SuccessStories from '../components/SuccessStories';
+import SuccessStoriesGrid from '../components/SuccessStoriesGrid';
+import ClientLogos from '../components/ClientLogos';
+import TeamSection from '../components/TeamSection';
 // import AIAgentShowcase from '../components/AIAgentShowcase';
 // import CTASection from '../components/CTASection';
 
@@ -33,15 +35,21 @@ const Homepage: React.FC<HomepageProps> = ({ openContactForm }) => {
       {/* Metrics */}
       <MetricsSection />
       
+      {/* Client Logos */}
+      <ClientLogos />
+      
       {/* Success Stories */}
       <div className="py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-light text-center text-gray-900 mb-16">
             {language === 'ar' ? 'قصص النجاح' : 'Success Stories'}
           </h2>
-          <SuccessStories />
+          <SuccessStoriesGrid />
         </div>
       </div>
+      
+      {/* Team Section */}
+      <TeamSection />
       
       {/* AI Agent Showcase - Coming Soon */}
       {/* <AIAgentShowcase /> */}
