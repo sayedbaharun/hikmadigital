@@ -9,7 +9,8 @@ import {
   Zap,
   Network,
   CheckCircle,
-  ArrowRight
+  ArrowRight,
+  Sparkles
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 

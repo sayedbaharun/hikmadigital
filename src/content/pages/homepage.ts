@@ -7,18 +7,18 @@ export const homepageContent: HomepageContent = {
       ar: 'حكمة ديجيتال'
     },
     headline: {
-      en: 'Your AI Partner. Human Touch.',
-      ar: 'شريكك في الذكاء الاصطناعي. بلمسة إنسانية.'
+      en: 'Grow Revenue 30% in 90 Days',
+      ar: 'زد إيراداتك 30% في 90 يوماً'
     },
     subheadline: {
-      en: 'Transform Dubai Business in 30 Days',
-      ar: 'حوّل أعمالك في دبي خلال 30 يوماً'
+      en: 'AI-powered automation meets human expertise for Dubai SMEs',
+      ar: 'أتمتة بالذكاء الاصطناعي مع خبرة بشرية للشركات الصغيرة والمتوسطة في دبي'
     },
     cta: {
       primary: {
         label: {
-          en: 'Start Free',
-          ar: 'ابدأ مجاناً'
+          en: 'Get Free Assessment',
+          ar: 'احصل على تقييم مجاني'
         },
         action: 'assessment'
       },

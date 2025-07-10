@@ -14,9 +14,10 @@ const Navbar: React.FC<NavbarProps> = ({ openContactForm }) => {
 
   // Steve Jobs Navigation - 4 links maximum
   const navigation = [
-    { name: language === 'ar' ? 'الرئيسية' : 'Home', href: '/' },
+    { name: language === 'ar' ? 'الحلول' : 'Solutions', href: '/solutions' },
+    { name: language === 'ar' ? 'الأسعار' : 'Pricing', href: '/pricing' },
+    { name: language === 'ar' ? 'عرض توضيحي' : 'Demo', href: '/demo' },
     { name: language === 'ar' ? 'عنا' : 'About', href: '/about' },
-    { name: language === 'ar' ? 'اتصل بنا' : 'Contact', href: '#', onClick: () => openContactForm?.('general') },
   ];
 
   const toggleLanguage = () => {
@@ -74,7 +75,7 @@ const Navbar: React.FC<NavbarProps> = ({ openContactForm }) => {
               onClick={() => openContactForm?.('assessment')}
               className="btn-primary focus-ring"
             >
-              {language === 'ar' ? 'ابدأ' : 'Start'}
+              {language === 'ar' ? 'احصل على التقييم' : 'Get Assessment'}
             </button>
           </div>
 
@@ -138,7 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ openContactForm }) => {
               }}
               className="btn-primary focus-ring w-full mt-4"
             >
-              {language === 'ar' ? 'ابدأ' : 'Start'}
+              {language === 'ar' ? 'احصل على التقييم' : 'Get Assessment'}
             </button>
           </div>
         </div>

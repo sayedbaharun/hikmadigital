@@ -9,7 +9,7 @@
   }
   
   body {
-    @apply bg-background text-primary antialiased;
+    @apply bg-white text-text-primary antialiased;
     font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   }
   
@@ -44,21 +44,21 @@
   }
   
   .btn-primary {
-    @apply btn bg-accent text-background hover:opacity-90;
+    @apply btn bg-primary text-white hover:bg-primary-600;
   }
   
   .btn-secondary {
-    @apply btn bg-transparent text-accent border border-accent hover:bg-accent hover:text-background;
+    @apply btn bg-transparent text-gold border border-gold hover:bg-gold hover:text-white;
   }
   
   /* Minimal Card - Only When Necessary */
   .card {
-    @apply bg-background border border-neutral-200 rounded-lg;
+    @apply bg-white border border-neutral-200 rounded-lg;
   }
   
   /* Focus States - Accessible */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
   }
   
   /* Perfect Spacing Classes */
@@ -80,5 +80,23 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  
+  /* Missing utility classes */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-600 bg-clip-text text-transparent;
+  }
+  
+  .uae-badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-uae-red/10 text-uae-red border border-uae-red/20;
+  }
+  
+  /* Font utility classes */
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-arabic {
+    font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
   }
 }

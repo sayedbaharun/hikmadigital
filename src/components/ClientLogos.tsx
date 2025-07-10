@@ -11,7 +11,7 @@ const ClientLogos: React.FC = () => {
   const content = useContent<{ clients: ClientLogo[] }>('site.clients');
   
   // Duplicate logos for seamless scrolling
-  const logos = [...content.clients, ...content.clients];
+  const logos = [...(content?.clients || []), ...(content?.clients || [])];
   
   useAnimationFrame(() => {
     if (scrollRef.current) {
@@ -25,6 +25,11 @@ const ClientLogos: React.FC = () => {
       scrollRef.current.style.transform = `translateX(-${scrollX.current}px)`;
     }
   });
+  
+  // Don't render if no logos
+  if (!logos.length) {
+    return null;
+  }
   
   return (
     <section className="py-20 bg-white overflow-hidden">

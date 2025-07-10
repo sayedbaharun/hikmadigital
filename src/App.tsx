@@ -34,7 +34,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
-        <div className="min-h-screen bg-black text-white flex flex-col">
+        <div className="min-h-screen bg-white text-primary-950 flex flex-col">
           <Navbar openContactForm={openContactForm} />
           <div className="flex-grow">
             <Routes>

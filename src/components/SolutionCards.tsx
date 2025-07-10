@@ -12,7 +12,7 @@ const SolutionCards: React.FC = () => {
   const { language, isRTL } = useLanguage();
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const { ref, isInView } = useScrollReveal({ once: true, threshold: 0.2 });
-  const content = useContent<HomepageContent>('pages/homepage');
+  const content = useContent<HomepageContent>('homepage');
 
   // Map icons to content cards
   const iconMap: Record<string, React.ElementType> = {
@@ -20,7 +20,7 @@ const SolutionCards: React.FC = () => {
     'Users': Users
   };
 
-  const solutions = content.solutions.cards.map(card => ({
+  const solutions = (content?.solutions?.cards || []).map(card => ({
     ...card,
     icon: iconMap[card.icon] || Bot
   }));

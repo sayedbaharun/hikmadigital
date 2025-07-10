@@ -8,8 +8,6 @@ import MetricsSection from '../components/MetricsSection';
 import SuccessStoriesGrid from '../components/SuccessStoriesGrid';
 import ClientLogos from '../components/ClientLogos';
 import TeamSection from '../components/TeamSection';
-// import AIAgentShowcase from '../components/AIAgentShowcase';
-// import CTASection from '../components/CTASection';
 
 interface HomepageProps {
   openContactForm: (type: 'general' | 'assessment' | 'partnership' | 'licensing') => void;
@@ -50,12 +48,6 @@ const Homepage: React.FC<HomepageProps> = ({ openContactForm }) => {
       
       {/* Team Section */}
       <TeamSection />
-      
-      {/* AI Agent Showcase - Coming Soon */}
-      {/* <AIAgentShowcase /> */}
-      
-      {/* CTA Section - Coming Soon */}
-      {/* <CTASection openContactForm={openContactForm} /> */}
     </div>
   );
 };

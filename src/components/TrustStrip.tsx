@@ -21,7 +21,7 @@ const TrustStrip: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-          {content.items.map((item, index) => {
+          {(content?.items || []).map((item, index) => {
             const IconComponent = Icons[item.icon as keyof typeof Icons] || Icons.Circle;
             
             return (

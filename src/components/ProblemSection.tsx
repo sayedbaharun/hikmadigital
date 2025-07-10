@@ -48,7 +48,7 @@ const ProblemSection: React.FC = () => {
           <h2 className={`text-4xl md:text-5xl lg:text-6xl font-light text-primary mb-24 ${
             isRTL ? 'font-arabic' : ''
           }`}>
-            {content.intro}
+            {content?.intro || 'Every Dubai business faces the same challenge.'}
           </h2>
         </motion.div>
 
@@ -60,7 +60,7 @@ const ProblemSection: React.FC = () => {
           animate={problemInView ? "visible" : "hidden"}
           className="space-y-8 mb-32"
         >
-          {content.problems.map((problem, index) => (
+          {(content?.problems || []).map((problem, index) => (
             <motion.p
               key={index}
               variants={itemVariants}
@@ -84,7 +84,7 @@ const ProblemSection: React.FC = () => {
           <p className={`text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-6 ${
             isRTL ? 'font-arabic' : ''
           }`}>
-            {content.solution}
+            {content?.solution || 'What if AI could solve this?'}
           </p>
           <motion.p
             initial={{ opacity: 0 }}
@@ -94,7 +94,7 @@ const ProblemSection: React.FC = () => {
               isRTL ? 'font-arabic' : ''
             }`}
           >
-            {content.solutionSubtext}
+            {content?.solutionSubtext || 'With a human touch?'}
           </motion.p>
         </motion.div>
 
