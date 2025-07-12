@@ -11,8 +11,8 @@ export const homepageContent: HomepageContent = {
       ar: 'زد إيراداتك 30% في 90 يوماً'
     },
     subheadline: {
-      en: 'AI-powered automation meets human expertise for Dubai SMEs',
-      ar: 'أتمتة بالذكاء الاصطناعي مع خبرة بشرية للشركات الصغيرة والمتوسطة في دبي'
+      en: 'Cut operational costs by 50% while scaling 3x faster - Built for Dubai\'s unique business environment',
+      ar: 'خفض التكاليف التشغيلية بنسبة 50% مع النمو 3 أضعاف أسرع - مصمم لبيئة الأعمال الفريدة في دبي'
     },
     cta: {
       primary: {
@@ -71,21 +71,21 @@ export const homepageContent: HomepageContent = {
   
   problems: {
     intro: {
-      en: 'Every Dubai business faces the same challenge.',
-      ar: 'كل عمل في دبي يواجه نفس التحدي.'
+      en: 'Dubai SMEs lose AED 2.4M yearly to inefficiency.',
+      ar: 'الشركات الصغيرة والمتوسطة في دبي تخسر 2.4 مليون درهم سنوياً بسبب عدم الكفاءة.'
     },
     problems: [
       {
-        en: 'Manual processes eating profits.',
-        ar: 'العمليات اليدوية تلتهم الأرباح.'
+        en: 'Owners spend 14 hours daily on operations instead of growth.',
+        ar: 'يقضي المالكون 14 ساعة يومياً في العمليات بدلاً من النمو.'
       },
       {
-        en: 'Lost customers to slow response.',
-        ar: 'خسارة العملاء بسبب البطء في الاستجابة.'
+        en: 'WhatsApp orders lost, inventory mismatched, staff overwhelmed.',
+        ar: 'طلبات واتساب مفقودة، مخزون غير متطابق، موظفون مرهقون.'
       },
       {
-        en: 'Data everywhere, insights nowhere.',
-        ar: 'البيانات في كل مكان، والرؤى في لا مكان.'
+        en: 'Competitors using AI are winning 3x more customers.',
+        ar: 'المنافسون الذين يستخدمون الذكاء الاصطناعي يكسبون 3 أضعاف العملاء.'
       }
     ],
     solution: {
@@ -108,11 +108,11 @@ export const homepageContent: HomepageContent = {
           ar: 'وكلاء الذكاء الاصطناعي'
         },
         description: {
-          en: 'Custom-built for your needs',
-          ar: 'مصممة خصيصاً لاحتياجاتك'
+          en: '24/7 Arabic/English support, order management, inventory tracking',
+          ar: 'دعم 24/7 بالعربية/الإنجليزية، إدارة الطلبات، تتبع المخزون'
         },
         link: '/ai-agents',
-        gradient: 'from-blue-500 to-purple-500',
+        gradient: 'from-primary-500 to-primary-600',
         illustration: {
           src: '/images/illustrations/ai-agent.svg',
           alt: {
@@ -130,11 +130,11 @@ export const homepageContent: HomepageContent = {
           ar: 'المدربون البشريون'
         },
         description: {
-          en: 'Expert guidance when you need it',
-          ar: 'إرشاد خبير عندما تحتاجه'
+          en: 'Dubai market experts, growth strategies, compliance guidance',
+          ar: 'خبراء سوق دبي، استراتيجيات النمو، إرشادات الامتثال'
         },
         link: '/team',
-        gradient: 'from-purple-500 to-pink-500',
+        gradient: 'from-gold to-gold-light',
         illustration: {
           src: '/images/illustrations/human-coach.svg',
           alt: {
@@ -154,13 +154,13 @@ export const homepageContent: HomepageContent = {
         value: 80,
         suffix: '%',
         label: {
-          en: 'Less Manual Work',
-          ar: 'أقل عمل يدوي'
+          en: 'Automation Rate Achieved',
+          ar: 'معدل الأتمتة المحقق'
         }
       },
       {
         id: 'roi',
-        value: 250,
+        value: 312,
         suffix: '%',
         label: {
           en: 'Average ROI',
@@ -169,7 +169,7 @@ export const homepageContent: HomepageContent = {
       },
       {
         id: 'rating',
-        value: 4.8,
+        value: 4.9,
         suffix: '/5',
         label: {
           en: 'Customer Rating',

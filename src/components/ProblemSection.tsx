@@ -45,7 +45,7 @@ const ProblemSection: React.FC = () => {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <h2 className={`text-4xl md:text-5xl lg:text-6xl font-light text-primary mb-24 ${
+          <h2 className={`text-2xl md:text-3xl font-light text-primary mb-24 ${
             isRTL ? 'font-arabic' : ''
           }`}>
             {content?.intro || 'Every Dubai business faces the same challenge.'}
@@ -64,7 +64,7 @@ const ProblemSection: React.FC = () => {
             <motion.p
               key={index}
               variants={itemVariants}
-              className={`text-2xl md:text-3xl lg:text-4xl text-text-primary font-light leading-relaxed ${
+              className={`text-lg md:text-xl text-text-primary font-light leading-relaxed ${
                 isRTL ? 'font-arabic' : ''
               }`}
             >
@@ -81,7 +81,7 @@ const ProblemSection: React.FC = () => {
           transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="mt-32"
         >
-          <p className={`text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-6 ${
+          <p className={`text-xl md:text-2xl font-light text-primary mb-6 ${
             isRTL ? 'font-arabic' : ''
           }`}>
             {content?.solution || 'What if AI could solve this?'}
@@ -90,7 +90,7 @@ const ProblemSection: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={solutionInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5, duration: 1 }}
-            className={`text-2xl md:text-3xl lg:text-4xl font-light text-gold ${
+            className={`text-lg md:text-xl font-light text-gold ${
               isRTL ? 'font-arabic' : ''
             }`}
           >

@@ -3,47 +3,47 @@ import { ClientLogo } from '../types';
 export const clientsContent = {
   clients: [
     {
-      id: 'dubai-corp',
+      id: 'al-futtaim',
       src: '/images/clients/client-1.svg',
       alt: {
-        en: 'Dubai Corp Logo',
-        ar: 'شعار دبي كورب'
+        en: 'Al Futtaim Automotive - 40% faster service',
+        ar: 'الفطيم للسيارات - خدمة أسرع بنسبة 40%'
       },
       url: '#'
     },
     {
-      id: 'emirates-group',
+      id: 'noon-restaurant',
       src: '/images/clients/client-2.svg',
       alt: {
-        en: 'Emirates Group Logo',
-        ar: 'شعار مجموعة الإمارات'
+        en: 'Noon Restaurants - 300% order increase',
+        ar: 'مطاعم نون - زيادة الطلبات 300%'
       },
       url: '#'
     },
     {
-      id: 'gulf-tech',
+      id: 'dubai-logistics',
       src: '/images/clients/client-3.svg',
       alt: {
-        en: 'Gulf Tech Logo',
-        ar: 'شعار جلف تك'
+        en: 'Dubai Logistics Hub - 50% cost reduction',
+        ar: 'مركز دبي اللوجستي - خفض التكاليف 50%'
       },
       url: '#'
     },
     {
-      id: 'dubai-mall',
+      id: 'jumeirah-retail',
       src: '/images/clients/client-4.svg',
       alt: {
-        en: 'Dubai Mall Logo',
-        ar: 'شعار دبي مول'
+        en: 'Jumeirah Retail - 2x revenue growth',
+        ar: 'جميرا للتجزئة - نمو الإيرادات مرتين'
       },
       url: '#'
     },
     {
-      id: 'etisalat',
+      id: 'dubai-sme',
       src: '/images/clients/client-5.svg',
       alt: {
-        en: 'Etisalat Logo',
-        ar: 'شعار اتصالات'
+        en: 'Dubai SME 100 Award Winner',
+        ar: 'الفائز بجائزة دبي للمؤسسات الصغيرة والمتوسطة 100'
       },
       url: '#'
     }

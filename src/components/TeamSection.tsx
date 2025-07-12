@@ -107,7 +107,7 @@ const TeamSection: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className={`text-4xl md:text-5xl font-light text-primary-950 mb-6 ${
+            className={`text-2xl md:text-3xl font-light text-primary-950 mb-6 ${
               isRTL ? 'font-arabic' : ''
             }`}
           >

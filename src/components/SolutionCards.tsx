@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Bot, Users, ArrowRight, Sparkles } from 'lucide-react';
+import { Bot, Users, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useContent } from '../hooks/useContent';
@@ -48,7 +48,7 @@ const SolutionCards: React.FC = () => {
   };
 
   return (
-    <section className="relative py-32 bg-gray-50 overflow-hidden">
+    <section className="relative py-32 bg-neutral-50 overflow-hidden">
       {/* Background Pattern */}
       <div 
         className="absolute inset-0 pointer-events-none"
@@ -77,57 +77,35 @@ const SolutionCards: React.FC = () => {
               className="group relative"
             >
               <Link to={solution.link} className="block">
-                <div className="relative bg-white rounded-3xl p-8 lg:p-12 h-full shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden">
-                  {/* Background Gradient on Hover */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                  />
+                <div className="relative bg-white rounded-3xl p-8 lg:p-12 h-full shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                   
                   {/* Illustration */}
                   {solution.illustration && (
-                    <div className="relative mb-8">
-                      <motion.div
-                        animate={{
-                          scale: hoveredCard === solution.id ? 1.05 : 1,
-                          y: hoveredCard === solution.id ? -5 : 0,
-                        }}
-                        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="w-48 h-48 mx-auto"
-                      >
+                    <div className="mb-8">
+                      <div className="w-48 h-48 mx-auto">
                         <OptimizedImage
                           {...solution.illustration}
                           className="w-full h-full"
                         />
-                      </motion.div>
-                      
-                      {/* Sparkle Effect on Hover */}
-                      <motion.div
-                        animate={{
-                          opacity: hoveredCard === solution.id ? 1 : 0,
-                          scale: hoveredCard === solution.id ? 1 : 0.8,
-                        }}
-                        className="absolute top-4 right-4"
-                      >
-                        <Sparkles className="w-6 h-6 text-gold" />
-                      </motion.div>
+                      </div>
                     </div>
                   )}
 
                   {/* Content */}
-                  <h3 className={`text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 ${
+                  <h3 className={`text-xl lg:text-2xl font-semibold text-primary-950 mb-4 ${
                     isRTL ? 'font-arabic' : ''
                   }`}>
                     {solution.title[language]}
                   </h3>
                   
-                  <p className={`text-lg lg:text-xl text-gray-600 mb-8 ${
+                  <p className={`text-lg lg:text-xl text-text-secondary mb-8 ${
                     isRTL ? 'font-arabic' : ''
                   }`}>
                     {solution.description[language]}
                   </p>
 
                   {/* Learn More Link */}
-                  <div className="flex items-center gap-2 text-gray-900 font-medium">
+                  <div className="flex items-center gap-2 text-primary-950 font-medium">
                     <span className={isRTL ? 'font-arabic' : ''}>
                       {language === 'ar' ? 'اكتشف المزيد' : 'Learn'}
                     </span>

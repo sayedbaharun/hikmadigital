@@ -105,7 +105,7 @@ const MetricItem: React.FC<MetricItemProps> = ({ metric, isInView, delay, langua
     >
       <div className="relative inline-block">
         {/* Number */}
-        <h3 className="text-6xl lg:text-7xl font-light text-gray-900 mb-4">
+        <h3 className="text-3xl font-light text-gray-900 mb-4">
           {formattedCount}
         </h3>
         

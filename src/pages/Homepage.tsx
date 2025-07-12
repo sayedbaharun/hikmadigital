@@ -37,9 +37,9 @@ const Homepage: React.FC<HomepageProps> = ({ openContactForm }) => {
       <ClientLogos />
       
       {/* Success Stories */}
-      <div className="py-32 bg-gray-50">
+      <div className="py-32 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-light text-center text-gray-900 mb-16">
+          <h2 className="text-2xl md:text-3xl font-light text-center text-primary-950 mb-16">
             {language === 'ar' ? 'قصص النجاح' : 'Success Stories'}
           </h2>
           <SuccessStoriesGrid />
