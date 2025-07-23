@@ -202,12 +202,12 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background">
       {/* Limited Time Offer Banner */}
       <motion.div 
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-gradient-to-r from-red-600 to-red-700 text-white py-3"
+        className="bg-gradient-to-r from-gold-dark to-gold text-white py-3"
       >
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className={`text-sm md:text-base font-semibold ${isRTL ? 'font-arabic' : 'font-inter'}`}>
@@ -223,12 +223,12 @@ const Pricing: React.FC = () => {
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl md:text-3xl font-semibold mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text">
                 {language === 'ar' ? 'اختر خطة الأتمتة بالذكاء الاصطناعي' : 'Choose Your AI Automation Plan'}
               </span>
             </h1>
-            <p className={`text-xl text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'انضم إلى أكثر من 500 شركة إماراتية توفر آلاف الدراهم شهرياً مع الأتمتة بالذكاء الاصطناعي' : 'Join 500+ UAE businesses saving thousands of dirhams monthly with AI-powered automation'}
             </p>
           </div>
@@ -237,16 +237,16 @@ const Pricing: React.FC = () => {
 
       {/* ROI Calculator */}
       <div className="max-w-4xl mx-auto px-4 mb-16">
-        <div className="glass-card p-8">
+        <div className="card p-8">
           <div className="flex items-center mb-6">
             <Calculator className="w-8 h-8 text-blue-600 mr-3" />
-            <h2 className={`text-2xl font-bold text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-2xl font-semibold text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'احسب عائد الاستثمار' : 'Calculate Your ROI'}
             </h2>
           </div>
           
           <div className="mb-6">
-            <label className={`block text-sm font-medium text-gray-400 mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <label className={`block text-sm font-medium text-secondary mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? `عدد الموظفين: ${employees}` : `Number of Employees: ${employees}`}
             </label>
             <input
@@ -255,9 +255,9 @@ const Pricing: React.FC = () => {
               max="500"
               value={employees}
               onChange={(e) => setEmployees(parseInt(e.target.value))}
-              className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+              className="w-full h-3 bg-neutral-200 rounded-lg appearance-none cursor-pointer slider"
             />
-            <div className="flex justify-between text-sm text-gray-500 mt-1">
+            <div className="flex justify-between text-sm text-secondary mt-1">
               <span>5</span>
               <span>250</span>
               <span>500</span>
@@ -268,34 +268,34 @@ const Pricing: React.FC = () => {
             <div className="bg-green-50 rounded-lg p-4">
               <div className="flex items-center mb-2">
                 <TrendingUp className="w-5 h-5 text-green-600 mr-2" />
-                <h3 className="font-semibold text-gray-900">Monthly Savings</h3>
+                <h3 className="font-semibold text-primary">Monthly Savings</h3>
               </div>
               <p className="text-2xl font-bold text-green-600">
                 {formatNumber(roi.monthlySavings)} AED
               </p>
-              <p className="text-sm text-gray-600">From automation & efficiency</p>
+              <p className="text-sm text-secondary">From automation & efficiency</p>
             </div>
 
             <div className="bg-blue-50 rounded-lg p-4">
               <div className="flex items-center mb-2">
                 <Clock className="w-5 h-5 text-blue-600 mr-2" />
-                <h3 className="font-semibold text-gray-900">ROI Timeline</h3>
+                <h3 className="font-semibold text-primary">ROI Timeline</h3>
               </div>
               <p className="text-2xl font-bold text-blue-600">
                 {roi.roiMonths} months
               </p>
-              <p className="text-sm text-gray-600">To positive ROI</p>
+              <p className="text-sm text-secondary">To positive ROI</p>
             </div>
 
             <div className="bg-purple-50 rounded-lg p-4">
               <div className="flex items-center mb-2">
                 <Award className="w-5 h-5 text-purple-600 mr-2" />
-                <h3 className="font-semibold text-gray-900">Annual Benefit</h3>
+                <h3 className="font-semibold text-primary">Annual Benefit</h3>
               </div>
               <p className="text-2xl font-bold text-purple-600">
                 {formatNumber(roi.annualSavings)} AED
               </p>
-              <p className="text-sm text-gray-600">Net savings per year</p>
+              <p className="text-sm text-secondary">Net savings per year</p>
             </div>
           </div>
         </div>
@@ -308,12 +308,12 @@ const Pricing: React.FC = () => {
             <div
               key={tier.name}
               className={`relative bg-white rounded-2xl shadow-lg p-8 ${
-                tier.highlighted ? 'ring-4 ring-blue-600 transform scale-105' : ''
+                tier.highlighted ? 'ring-4 ring-primary transform scale-105' : ''
               }`}
             >
               {tier.highlighted && (
                 <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-gradient-to-r from-primary-600 to-primary text-white px-6 py-2 rounded-full text-sm font-semibold">
                     MOST POPULAR
                   </span>
                 </div>
@@ -328,11 +328,11 @@ const Pricing: React.FC = () => {
               )}
 
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                <p className="text-gray-600 mb-4">{tier.description}</p>
+                <h3 className="text-xl font-semibold text-primary mb-2">{tier.name}</h3>
+                <p className="text-secondary mb-4">{tier.description}</p>
                 <div className="flex items-baseline mb-4">
-                  <span className="text-4xl font-bold text-gray-900">{tier.price}</span>
-                  {tier.priceValue > 0 && <span className="text-gray-500 ml-2">/month</span>}
+                  <span className="text-2xl font-semibold text-primary">{tier.price}</span>
+                  {tier.priceValue > 0 && <span className="text-secondary ml-2">/month</span>}
                   {tier.name === 'Growth' && employees > 50 && (
                     <span className="ml-3 px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full animate-pulse">
                       Save {employees >= 100 ? '15%' : '10%'}!
@@ -348,34 +348,34 @@ const Pricing: React.FC = () => {
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
-                  <Users className="w-5 h-5 text-gray-400 mr-3 mt-0.5" />
-                  <span className="text-gray-700">{tier.agents}</span>
+                  <Users className="w-5 h-5 text-neutral-400 mr-3 mt-0.5" />
+                  <span className="text-primary">{tier.agents}</span>
                 </div>
                 <div className="flex items-start">
-                  <TrendingUp className="w-5 h-5 text-gray-400 mr-3 mt-0.5" />
-                  <span className="text-gray-700">{tier.tasks}</span>
+                  <TrendingUp className="w-5 h-5 text-neutral-400 mr-3 mt-0.5" />
+                  <span className="text-primary">{tier.tasks}</span>
                 </div>
                 <div className="flex items-start">
-                  <MessageCircle className="w-5 h-5 text-gray-400 mr-3 mt-0.5" />
-                  <span className="text-gray-700">{tier.support}</span>
+                  <MessageCircle className="w-5 h-5 text-neutral-400 mr-3 mt-0.5" />
+                  <span className="text-primary">{tier.support}</span>
                 </div>
                 <div className="flex items-start">
-                  <Award className="w-5 h-5 text-gray-400 mr-3 mt-0.5" />
-                  <span className="text-gray-700">{tier.integrations}</span>
+                  <Award className="w-5 h-5 text-neutral-400 mr-3 mt-0.5" />
+                  <span className="text-primary">{tier.integrations}</span>
                 </div>
                 <div className="flex items-start">
-                  <Clock className="w-5 h-5 text-gray-400 mr-3 mt-0.5" />
-                  <span className="text-gray-700">{tier.training}</span>
+                  <Clock className="w-5 h-5 text-neutral-400 mr-3 mt-0.5" />
+                  <span className="text-primary">{tier.training}</span>
                 </div>
               </div>
 
               <div className="border-t pt-6 mb-8">
-                <h4 className="font-semibold text-gray-900 mb-4">All features:</h4>
+                <h4 className="font-semibold text-primary mb-4">All features:</h4>
                 <ul className="space-y-3">
                   {tier.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm">{feature}</span>
+                      <span className="text-primary text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -385,8 +385,8 @@ const Pricing: React.FC = () => {
                 to={tier.ctaLink}
                 className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all ${
                   tier.highlighted
-                    ? 'bg-blue-600 text-white hover:bg-blue-700'
-                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    ? 'btn-primary'
+                    : 'btn-secondary'
                 }`}
               >
                 {tier.cta}
@@ -398,24 +398,24 @@ const Pricing: React.FC = () => {
 
       {/* Feature Comparison Table */}
       <div className="max-w-6xl mx-auto px-4 mb-16">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-2xl font-semibold text-center text-primary mb-12">
           Detailed Feature Comparison
         </h2>
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-50">
+              <thead className="bg-neutral-50">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-primary">
                     Features
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-primary">
                     Starter
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-primary">
                     Growth
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-primary">
                     Enterprise
                   </th>
                 </tr>
@@ -434,12 +434,12 @@ const Pricing: React.FC = () => {
                   { feature: 'Priority Support', starter: false, growth: true, enterprise: true },
                 ].map((row, index) => (
                   <tr key={index}>
-                    <td className="px-6 py-4 text-sm text-gray-900 font-medium">
+                    <td className="px-6 py-4 text-sm text-primary font-medium">
                       <div className="flex items-center">
                         {row.feature}
                         <div className="group relative ml-2">
-                          <Info className="w-4 h-4 text-gray-400 cursor-help" />
-                          <div className="invisible group-hover:visible absolute left-0 bottom-full mb-2 w-48 p-2 bg-gray-800 text-white text-xs rounded-lg">
+                          <Info className="w-4 h-4 text-neutral-400 cursor-help" />
+                          <div className="invisible group-hover:visible absolute left-0 bottom-full mb-2 w-48 p-2 bg-neutral-800 text-white text-xs rounded-lg">
                             Learn more about {row.feature}
                           </div>
                         </div>
@@ -450,10 +450,10 @@ const Pricing: React.FC = () => {
                         row.starter ? (
                           <Check className="w-5 h-5 text-green-500 mx-auto" />
                         ) : (
-                          <X className="w-5 h-5 text-gray-300 mx-auto" />
+                          <X className="w-5 h-5 text-neutral-300 mx-auto" />
                         )
                       ) : (
-                        <span className="text-sm text-gray-900">{row.starter}</span>
+                        <span className="text-sm text-primary">{row.starter}</span>
                       )}
                     </td>
                     <td className="px-6 py-4 text-center">
@@ -461,10 +461,10 @@ const Pricing: React.FC = () => {
                         row.growth ? (
                           <Check className="w-5 h-5 text-green-500 mx-auto" />
                         ) : (
-                          <X className="w-5 h-5 text-gray-300 mx-auto" />
+                          <X className="w-5 h-5 text-neutral-300 mx-auto" />
                         )
                       ) : (
-                        <span className="text-sm text-gray-900">{row.growth}</span>
+                        <span className="text-sm text-primary">{row.growth}</span>
                       )}
                     </td>
                     <td className="px-6 py-4 text-center">
@@ -472,10 +472,10 @@ const Pricing: React.FC = () => {
                         row.enterprise ? (
                           <Check className="w-5 h-5 text-green-500 mx-auto" />
                         ) : (
-                          <X className="w-5 h-5 text-gray-300 mx-auto" />
+                          <X className="w-5 h-5 text-neutral-300 mx-auto" />
                         )
                       ) : (
-                        <span className="text-sm text-gray-900">{row.enterprise}</span>
+                        <span className="text-sm text-primary">{row.enterprise}</span>
                       )}
                     </td>
                   </tr>
@@ -487,9 +487,9 @@ const Pricing: React.FC = () => {
       </div>
 
       {/* Testimonials Carousel */}
-      <div className="bg-gray-50 py-16 mb-16">
+      <div className="bg-neutral-50 py-16 mb-16">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-2xl font-semibold text-center text-primary mb-12">
             What Our Customers Say
           </h2>
           <div className="relative">
@@ -501,10 +501,10 @@ const Pricing: React.FC = () => {
                   className="w-16 h-16 rounded-full mr-4"
                 />
                 <div>
-                  <h3 className="font-semibold text-gray-900">
+                  <h3 className="font-semibold text-primary">
                     {testimonials[currentTestimonial].name}
                   </h3>
-                  <p className="text-gray-600">{testimonials[currentTestimonial].company}</p>
+                  <p className="text-secondary">{testimonials[currentTestimonial].company}</p>
                 </div>
                 <div className="ml-auto">
                   <div className="flex">
@@ -514,11 +514,11 @@ const Pricing: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <blockquote className="text-gray-700 mb-4">
+              <blockquote className="text-primary mb-4">
                 "{testimonials[currentTestimonial].quote}"
               </blockquote>
               <div className="flex items-center text-sm">
-                <span className="text-gray-500">Monthly Savings:</span>
+                <span className="text-secondary">Monthly Savings:</span>
                 <span className="ml-2 font-semibold text-green-600">
                   {testimonials[currentTestimonial].savings}
                 </span>
@@ -530,7 +530,7 @@ const Pricing: React.FC = () => {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentTestimonial ? 'bg-blue-600 w-8' : 'bg-gray-300'
+                    index === currentTestimonial ? 'bg-primary w-8' : 'bg-neutral-300'
                   }`}
                 />
               ))}
@@ -541,7 +541,7 @@ const Pricing: React.FC = () => {
 
       {/* FAQ Section */}
       <div className="max-w-4xl mx-auto px-4 mb-16">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-2xl font-semibold text-center text-primary mb-12">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
@@ -549,18 +549,18 @@ const Pricing: React.FC = () => {
             <div key={index} className="bg-white rounded-lg shadow-md">
               <button
                 onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-50 transition-colors"
               >
-                <span className="font-semibold text-gray-900">{faq.question}</span>
+                <span className="font-semibold text-primary">{faq.question}</span>
                 <ArrowRight
-                  className={`w-5 h-5 text-gray-400 transform transition-transform ${
+                  className={`w-5 h-5 text-neutral-400 transform transition-transform ${
                     expandedFAQ === index ? 'rotate-90' : ''
                   }`}
                 />
               </button>
               {expandedFAQ === index && (
                 <div className="px-6 pb-4">
-                  <p className="text-gray-700">{faq.answer}</p>
+                  <p className="text-primary">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -569,29 +569,29 @@ const Pricing: React.FC = () => {
       </div>
 
       {/* Bottom CTA Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 py-16">
+      <div className="bg-gradient-to-r from-primary-600 to-primary py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl font-semibold text-white mb-4">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-lg text-white/90 mb-8">
             Join 500+ UAE businesses already saving time and money with AI automation
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/signup"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="btn-secondary bg-white hover:bg-neutral-100"
             >
               Start Free Trial
             </Link>
             <Link
               to="/demo"
-              className="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-400 transition-colors"
+              className="btn-primary"
             >
               Book a Demo
             </Link>
           </div>
-          <p className="text-sm text-blue-100 mt-6">
+          <p className="text-sm text-white/80 mt-6">
             No credit card required • 14-day free trial • Cancel anytime
           </p>
         </div>

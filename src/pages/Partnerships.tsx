@@ -269,7 +269,7 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -281,28 +281,28 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
             <div className="flex items-center justify-center space-x-4 rtl:space-x-reverse mb-6">
               <div className="flex items-center px-4 py-2 glass-card">
                 <Shield className="w-4 h-4 text-uae-red mr-2 rtl:ml-2 rtl:mr-0" />
-                <span className={`text-sm font-light text-uae-red ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <span className={`text-sm text-uae-red ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   UAE Charter Certified
                 </span>
               </div>
               <div className="flex items-center px-4 py-2 glass-card">
                 <Award className="w-4 h-4 text-primary-400 mr-2 rtl:ml-2 rtl:mr-0" />
-                <span className={`text-sm font-light text-primary-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <span className={`text-sm text-primary-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   25+ Strategic Partnerships
                 </span>
               </div>
             </div>
 
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl lg:text-3xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'الشراكات والتعاون' : 'Partnerships & Collaborations'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary">
                 {language === 'ar' ? 'شراكات استراتيجية ومواءمة حكومية' : 'Strategic Partnerships & Government Alignment'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-xl text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'شراكات حكومية وتنظيمية، نظام بيئي تكنولوجي، وتحالفات استراتيجية لتعزيز نمو وتأثير حكمة ديجيتال'
                 : 'Government and regulatory partnerships, technology ecosystem, and strategic alliances to enhance Hikma Digital\'s growth and impact'
@@ -313,7 +313,7 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
 
         {/* Partnership Categories */}
         <div className="mb-16">
-          <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-2xl text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'استكشف شراكاتنا' : 'Explore Our Partnerships'}
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -330,9 +330,9 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
                   }`}
                 >
                   <div className={`p-3 bg-gradient-to-br ${category.color} rounded-lg mx-auto mb-3 w-fit`}>
-                    <IconComponent className="w-6 h-6 text-white" />
+                    <IconComponent className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className={`font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {category.name}
                   </h3>
                 </motion.button>
@@ -361,10 +361,10 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
                 <div className="flex items-center space-x-4 rtl:space-x-reverse mb-4">
                   <div className="text-4xl">{item.logo}</div>
                   <div>
-                    <h3 className={`text-xl font-medium text-white mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <h3 className={`text-xl font-medium text-primary mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {item.name}
                     </h3>
-                    <p className={`text-sm text-gray-300 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-sm text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {item.description}
                     </p>
                   </div>
@@ -395,7 +395,7 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
                   {(item.features || item.benefits)?.map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-2 rtl:space-x-reverse">
                       <CheckCircle className="w-4 h-4 text-accent-400" />
-                      <span className={`text-sm text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <span className={`text-sm text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {feature}
                       </span>
                     </div>
@@ -404,7 +404,7 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
                 
                 {item.status && (
                   <div className="flex items-center justify-between">
-                    <span className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <span className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'الحالة' : 'Status'}:
                     </span>
                     <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">
@@ -415,10 +415,10 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
                 
                 {item.date && (
                   <div className="flex items-center justify-between">
-                    <span className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <span className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'التاريخ' : 'Date'}:
                     </span>
-                    <span className="text-sm text-gray-300">
+                    <span className="text-sm text-secondary">
                       {item.date}
                     </span>
                   </div>
@@ -430,12 +430,12 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
 
         {/* Partnership Application */}
         <div className="mb-20">
-          <h2 className={`text-3xl font-light text-center mb-12 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-2xl text-center mb-12 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'تقديم طلب الشراكة' : 'Apply for Partnership'}
           </h2>
           
           <div className="glass-card p-8 text-center">
-            <p className={`text-lg text-gray-300 mb-8 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary mb-8 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'هل أنت مهتم بالشراكة مع حكمة ديجيتال؟ نحن نبحث دائمًا عن شركاء استراتيجيين لتوسيع نطاق تأثيرنا وتقديم قيمة أكبر لعملائنا.'
                 : 'Interested in partnering with Hikma Digital? We\'re always looking for strategic partners to expand our impact and deliver greater value to our clients.'
@@ -446,7 +446,7 @@ const Partnerships: React.FC<PartnershipsProps> = ({ openContactForm }) => {
               onClick={() => openContactForm && openContactForm('partnership')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 group ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`btn-primary group ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               <Handshake className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
               {language === 'ar' ? 'ابدأ الشراكة' : 'Start Partnership'}

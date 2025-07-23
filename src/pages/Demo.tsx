@@ -147,7 +147,7 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -156,10 +156,10 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-              <span className="gradient-text font-bold">{t('demo.title')}</span>
+            <h1 className={`text-2xl lg:text-3xl font-semibold tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <span className="gradient-text">{t('demo.title')}</span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {t('demo.subtitle')}
             </p>
           </motion.div>
@@ -173,7 +173,7 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
           >
             {/* Business Type Selection */}
             <div className="mb-12">
-              <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h2 className={`text-xl font-semibold text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar' ? 'اختر نوع عملك' : 'Choose Your Business Type'}
               </h2>
               <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
@@ -183,12 +183,12 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
                     whileHover={{ scale: 1.05, y: -5 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedBusiness(business.id)}
-                    className={`glass-card glass-card-hover p-6 text-center transition-all duration-300 ${
-                      selectedBusiness === business.id ? 'ring-2 ring-primary-500 bg-primary-500/10' : ''
+                    className={`card p-6 text-center transition-all duration-300 ${
+                      selectedBusiness === business.id ? 'ring-2 ring-primary' : ''
                     }`}
                   >
                     <div className="text-4xl mb-3">{business.icon}</div>
-                    <h3 className={`font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <h3 className={`font-semibold text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {business.name}
                     </h3>
                   </motion.button>
@@ -199,7 +199,7 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
             {/* Demo Scenarios */}
             {selectedBusiness && demoScenarios[selectedBusiness] && (
               <div className="mb-12">
-                <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h2 className={`text-xl font-semibold text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar' ? 'اختر السيناريو' : 'Choose Demo Scenario'}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -209,25 +209,25 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="glass-card p-6 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                      className="card p-6 hover:shadow-md transition-all duration-300 cursor-pointer"
                       onClick={() => startDemo(selectedBusiness, index)}
                     >
-                      <h3 className={`text-xl font-medium text-white mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <h3 className={`text-lg font-semibold text-primary mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {scenario.title}
                       </h3>
-                      <p className={`text-gray-300 font-light mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <p className={`text-secondary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {scenario.description}
                       </p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2 rtl:space-x-reverse text-primary-400">
+                        <div className="flex items-center space-x-2 rtl:space-x-reverse text-primary">
                           <Play className="w-4 h-4" />
                           <span className={`text-sm ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                             {language === 'ar' ? 'ابدأ العرض التوضيحي' : 'Start Demo'}
                           </span>
                         </div>
                         <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                          <Bot className="w-4 h-4 text-purple-400" />
-                          <User className="w-4 h-4 text-blue-400" />
+                          <Bot className="w-4 h-4 text-primary" />
+                          <User className="w-4 h-4 text-gold" />
                         </div>
                       </div>
                     </motion.div>
@@ -247,19 +247,19 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
           >
             {/* Chat Interface */}
             <div className="lg:col-span-2">
-              <div className="glass-card p-6 h-96">
+              <div className="card p-6 h-96">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className={`text-xl font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`text-lg font-semibold text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'جلسة التدريب المباشرة' : 'Live Coaching Session'}
                   </h3>
                   <div className="flex items-center space-x-2 rtl:space-x-reverse">
                     <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                      <span className="text-xs text-purple-400">AI Active</span>
+                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                      <span className="text-xs text-primary">AI Active</span>
                     </div>
                     <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-xs text-blue-400">Human Coach</span>
+                      <div className="w-2 h-2 bg-gold rounded-full animate-pulse"></div>
+                      <span className="text-xs text-gold">Human Coach</span>
                     </div>
                   </div>
                 </div>
@@ -273,10 +273,10 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
                     >
                       <div className={`max-w-xs px-4 py-2 rounded-lg ${
                         msg.sender === 'user'
-                          ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-white'
+                          ? 'bg-gradient-to-r from-primary-600 to-primary text-white'
                           : msg.sender === 'ai'
-                          ? 'bg-purple-500/20 border border-purple-500/30 text-purple-100'
-                          : 'bg-blue-500/20 border border-blue-500/30 text-blue-100'
+                          ? 'bg-primary/10 border border-primary/30 text-primary'
+                          : 'bg-gold/10 border border-gold/30 text-gold-dark'
                       } ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         <div className="flex items-center space-x-2 rtl:space-x-reverse mb-1">
                           {msg.sender === 'ai' && <Bot className="w-3 h-3" />}
@@ -285,7 +285,7 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
                             {msg.sender === 'ai' ? 'Hikma AI' : msg.sender === 'human' ? 'Human Coach' : 'You'}
                           </span>
                         </div>
-                        <p className="text-sm font-light">{msg.message}</p>
+                        <p className="text-sm">{msg.message}</p>
                       </div>
                     </div>
                   ))}
@@ -298,12 +298,12 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     placeholder={language === 'ar' ? 'اكتب رسالتك...' : 'Type your message...'}
-                    className={`flex-1 px-4 py-2 bg-white/5 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
+                    className={`flex-1 px-4 py-2 bg-white border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-primary placeholder-neutral-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
                   />
-                  <button className="px-4 py-2 bg-gradient-to-r from-primary-600 to-accent-500 text-white rounded-lg hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300">
+                  <button className="btn-primary">
                     <Send className="w-4 h-4" />
                   </button>
-                  <button className="px-4 py-2 glass-card glass-card-hover text-gray-300 rounded-lg">
+                  <button className="btn-secondary">
                     <Mic className="w-4 h-4" />
                   </button>
                 </div>
@@ -313,20 +313,20 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
             {/* Results Panel */}
             <div className="space-y-6">
               {/* Real-time Metrics */}
-              <div className="glass-card p-6">
-                <h4 className={`text-lg font-medium text-white mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <div className="card p-6">
+                <h4 className={`text-base font-semibold text-primary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar' ? 'النتائج المتوقعة' : 'Projected Results'}
                 </h4>
                 {selectedBusiness && demoScenarios[selectedBusiness] && (
                   <div className="space-y-4">
                     {Object.entries(demoScenarios[selectedBusiness][language][selectedScenario].metrics).map(([key, value]) => (
                       <div key={key} className="flex justify-between items-center">
-                        <span className={`text-sm text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <span className={`text-sm text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {key === 'timeSaving' ? (language === 'ar' ? 'توفير الوقت' : 'Time Saving') :
                            key === 'costReduction' ? (language === 'ar' ? 'تقليل التكاليف' : 'Cost Reduction') :
                            (language === 'ar' ? 'رضا العملاء' : 'Satisfaction')}
                         </span>
-                        <span className="text-primary-400 font-medium">{value}</span>
+                        <span className="text-primary font-semibold">{value}</span>
                       </div>
                     ))}
                   </div>
@@ -334,25 +334,25 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
               </div>
 
               {/* UAE Charter Compliance */}
-              <div className="glass-card p-6">
-                <h4 className={`text-lg font-medium text-white mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <div className="card p-6">
+                <h4 className={`text-base font-semibold text-primary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar' ? 'امتثال ميثاق الإمارات' : 'UAE Charter Compliance'}
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <CheckCircle className="w-4 h-4 text-emerald" />
                     <span className={`text-sm text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'الشفافية' : 'Transparency'}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <CheckCircle className="w-4 h-4 text-emerald" />
                     <span className={`text-sm text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'الإشراف البشري' : 'Human Oversight'}
                     </span>
                   </div>
                   <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <CheckCircle className="w-4 h-4 text-emerald" />
                     <span className={`text-sm text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'الذكاء الثقافي' : 'Cultural Intelligence'}
                     </span>
@@ -365,7 +365,7 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
                 onClick={() => openContactForm && openContactForm('general')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`w-full flex items-center justify-center space-x-2 rtl:space-x-reverse px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                className={`w-full btn-primary flex items-center justify-center space-x-2 rtl:space-x-reverse ${isRTL ? 'font-arabic' : 'font-inter'}`}
               >
                 <Download className="w-4 h-4" />
                 <span>{language === 'ar' ? 'تحميل خطة العمل' : 'Download Action Plan'}</span>
@@ -382,12 +382,12 @@ const Demo: React.FC<DemoProps> = ({ openContactForm }) => {
           className="mt-20"
         >
           <div className="text-center mb-12">
-            <h2 className={`text-3xl lg:text-4xl font-extralight tracking-tight mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-xl lg:text-2xl font-semibold tracking-tight mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'عروض الأتمتة الحية' : 'Live Automation Demonstrations'}
               </span>
             </h2>
-            <p className={`text-lg font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-base text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' 
                 ? 'شاهد كيف تعمل حلول الأتمتة الذكية لدينا في الوقت الفعلي مع احترام الثقافة والقيم المحلية'
                 : 'Watch our intelligent automation solutions work in real-time with cultural awareness and local values'}

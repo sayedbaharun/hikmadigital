@@ -99,4 +99,18 @@
   .font-arabic {
     font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
   }
+  
+  /* Glass card component */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-lg shadow-sm;
+  }
+  
+  .glass-card-hover {
+    @apply hover:bg-white/90 hover:shadow-md transition-all duration-200;
+  }
+  
+  /* Glow effect */
+  .glow-effect {
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
 }

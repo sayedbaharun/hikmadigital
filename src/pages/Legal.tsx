@@ -186,7 +186,7 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -210,16 +210,16 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
               </div>
             </div>
 
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl lg:text-3xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'القانونية والامتثال' : 'Legal & Compliance'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary">
                 {language === 'ar' ? 'إطار قانوني شامل لأعمال الملكية الفكرية' : 'Comprehensive Legal Framework for IP Business'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-xl text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'شروط الخدمة وسياسة الخصوصية وإدارة الملكية الفكرية والامتثال التنظيمي'
                 : 'Terms of service, privacy policy, IP management, and regulatory compliance'
@@ -230,7 +230,7 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
 
         {/* Legal Categories */}
         <div className="mb-16">
-          <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-2xl text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'الوثائق القانونية' : 'Legal Documentation'}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -247,9 +247,9 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
                   }`}
                 >
                   <div className={`p-3 bg-gradient-to-br ${category.color} rounded-lg mx-auto mb-3 w-fit`}>
-                    <IconComponent className="w-6 h-6 text-white" />
+                    <IconComponent className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className={`font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {category.name}
                   </h3>
                 </motion.button>
@@ -268,7 +268,7 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
         >
           <div className="glass-card p-8">
             <div className="flex items-center justify-between mb-8">
-              <h3 className={`text-2xl font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h3 className={`text-2xl font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {legalCategories.find(c => c.id === selectedCategory)?.name}
               </h3>
               <motion.button
@@ -291,11 +291,11 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
                       <div className="p-2 bg-primary-500/20 rounded-lg">
                         <IconComponent className="w-5 h-5 text-primary-400" />
                       </div>
-                      <h4 className={`text-xl font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <h4 className={`text-xl font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {item.title}
                       </h4>
                     </div>
-                    <p className={`text-gray-300 font-light leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-secondary leading-relaxed ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {item.content}
                     </p>
                   </div>
@@ -314,10 +314,10 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
           className="text-center"
         >
           <div className="glass-card p-12">
-            <h2 className={`text-3xl font-light tracking-tight mb-6 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-2xl tracking-tight mb-6 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'هل تحتاج إلى مساعدة قانونية؟' : 'Need Legal Assistance?'}
             </h2>
-            <p className={`text-lg font-light text-gray-300 mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'فريقنا القانوني متاح للمساعدة في جميع الأمور المتعلقة بالامتثال والملكية الفكرية والترخيص'
                 : 'Our legal team is available to assist with all compliance, IP, and licensing matters'
@@ -328,7 +328,7 @@ const Legal: React.FC<LegalProps> = ({ openContactForm }) => {
                 onClick={() => openContactForm && openContactForm('general')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 group ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                className={`btn-primary group ${isRTL ? 'font-arabic' : 'font-inter'}`}
               >
                 <FileText className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
                 {language === 'ar' ? 'جدولة استشارة قانونية' : 'Schedule Legal Consultation'}

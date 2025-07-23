@@ -117,7 +117,7 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -126,16 +126,16 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl lg:text-3xl font-semibold tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'رحلة تحول عملك' : 'Your Business Transformation'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary">
                 {language === 'ar' ? 'خلال 90 يوماً' : 'Journey in 90 Days'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-xl  text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'من العمليات التقليدية إلى الكفاءة المعززة بالذكاء الاصطناعي - تتبع كل خطوة في تطور شركتك الصغيرة والمتوسطة'
                 : 'From traditional operations to AI-enhanced efficiency - track every step of your SME evolution'
@@ -146,7 +146,7 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
 
         {/* Transformation Timeline */}
         <div className="mb-20">
-          <h2 className={`text-3xl font-light text-center mb-12 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-xl font-semibold text-center mb-12 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'مراحل التحول' : 'Transformation Phases'}
           </h2>
 
@@ -159,8 +159,8 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
                   onClick={() => setSelectedMonth(phase.month)}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                     selectedMonth === phase.month
-                      ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-primary'
+                      : 'text-secondary hover:text-primary hover:bg-white/5'
                   } ${isRTL ? 'font-arabic' : 'font-inter'}`}
                 >
                   {language === 'ar' ? `الشهر ${phase.month}` : `Month ${phase.month}`}
@@ -183,27 +183,27 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
                   <div>
                     <div className="flex items-center mb-6">
                       <div className={`p-4 bg-gradient-to-br ${phase.color} rounded-lg mr-4 rtl:ml-4 rtl:mr-0`}>
-                        <phase.icon className="w-8 h-8 text-white" />
+                        <phase.icon className="w-8 h-8 text-primary" />
                       </div>
                       <div>
-                        <h3 className={`text-2xl font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <h3 className={`text-2xl font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {phase.title}
                         </h3>
-                        <p className={`text-gray-300 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <p className={`text-secondary  ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {phase.description}
                         </p>
                       </div>
                     </div>
 
                     <div className="mb-6">
-                      <h4 className={`text-lg font-medium text-white mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <h4 className={`text-lg font-medium text-primary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'المهام الرئيسية' : 'Key Tasks'}
                       </h4>
                       <div className="space-y-3">
                         {phase.tasks.map((task, index) => (
                           <div key={index} className="flex items-center space-x-3 rtl:space-x-reverse">
                             <CheckCircle className="w-5 h-5 text-accent-400 flex-shrink-0" />
-                            <span className={`text-gray-300 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                            <span className={`text-secondary  ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                               {task}
                             </span>
                           </div>
@@ -213,7 +213,7 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
                   </div>
 
                   <div>
-                    <h4 className={`text-lg font-medium text-white mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <h4 className={`text-lg font-medium text-primary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'المخرجات المتوقعة' : 'Expected Deliverables'}
                     </h4>
                     <div className="space-y-4">
@@ -221,9 +221,9 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
                         <div key={index} className="glass-card p-4">
                           <div className="flex items-center space-x-3 rtl:space-x-reverse">
                             <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
-                              <span className="text-white text-sm font-medium">{index + 1}</span>
+                              <span className="text-primary text-sm font-medium">{index + 1}</span>
                             </div>
-                            <span className={`text-white font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                            <span className={`text-primary  ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                               {deliverable}
                             </span>
                           </div>
@@ -258,10 +258,10 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
         {/* Success Stories */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className={`text-3xl font-light tracking-tight mb-4 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-xl font-semibold tracking-tight mb-4 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'قصص نجاح حقيقية' : 'Real Success Stories'}
             </h2>
-            <p className={`text-lg font-light text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg  text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' 
                 ? 'شركات صغيرة ومتوسطة في دبي حققت نتائج ملموسة'
                 : 'Dubai SMEs achieving measurable results'
@@ -280,15 +280,15 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
                 className="glass-card p-6 hover:bg-white/10 transition-all duration-300"
               >
                 <div className="text-center mb-4">
-                  <div className="text-4xl font-bold gradient-text mb-2">
+                  <div className="text-2xl font-semibold gradient-text mb-2">
                     {story.improvement}
                   </div>
-                  <div className={`text-sm text-gray-400 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <div className={`text-sm text-gray-400  ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {story.metric}
                   </div>
                 </div>
 
-                <h3 className={`text-lg font-medium text-white mb-2 text-center ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h3 className={`text-lg font-medium text-primary mb-2 text-center ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {story.business}
                 </h3>
                 
@@ -298,7 +298,7 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
                   </span>
                 </div>
 
-                <p className={`text-gray-300 font-light text-center ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <p className={`text-secondary  text-center ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {story.description}
                 </p>
               </motion.div>
@@ -315,10 +315,10 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
           className="text-center"
         >
           <div className="glass-card p-12">
-            <h2 className={`text-3xl font-light tracking-tight mb-6 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-xl font-semibold tracking-tight mb-6 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'هل أنت مستعد لبدء تحولك؟' : 'Ready to Start Your Transformation?'}
             </h2>
-            <p className={`text-lg font-light text-gray-300 mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg  text-secondary mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'انضم إلى مئات الشركات الصغيرة والمتوسطة في دبي التي تحولت بالفعل مع فريقنا من الذكاء الاصطناعي والخبراء البشريين'
                 : 'Join hundreds of Dubai SMEs that have already transformed with our human-AI team'
@@ -328,7 +328,7 @@ const Transform: React.FC<TransformProps> = ({ openContactForm }) => {
               onClick={() => openContactForm && openContactForm('general')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 group ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-primary font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 group ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               <Calendar className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
               {language === 'ar' ? 'احجز استشارة مجانية' : 'Book Free Consultation'}

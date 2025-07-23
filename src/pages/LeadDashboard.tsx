@@ -252,7 +252,7 @@ const LeadDashboard: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black py-20">
+      <div className="min-h-screen bg-background py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="animate-pulse space-y-8">
             <div className="h-8 bg-gray-700 rounded w-1/3"></div>
@@ -269,21 +269,21 @@ const LeadDashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className={`text-3xl font-light text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'لوحة إدارة العملاء المحتملين' : 'Lead Management Dashboard'}
             </h1>
-            <p className={`text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'إدارة ومتابعة العملاء المحتملين من تقييم الذكاء الاصطناعي' : 'Manage and track leads from AI readiness assessments'}
             </p>
           </div>
           <button
             onClick={exportLeads}
-            className={`flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors ${isRTL ? 'font-arabic' : 'font-inter'}`}
+            className={`btn-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
           >
             <Download className="w-4 h-4" />
             <span>{language === 'ar' ? 'تصدير' : 'Export'}</span>
@@ -294,48 +294,48 @@ const LeadDashboard: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-8">
           <div className="glass-card p-6 text-center">
             <Users className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{metrics.totalLeads}</div>
-            <div className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="text-2xl font-bold text-primary">{metrics.totalLeads}</div>
+            <div className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'إجمالي العملاء' : 'Total Leads'}
             </div>
           </div>
 
           <div className="glass-card p-6 text-center">
             <Clock className="w-8 h-8 text-yellow-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{metrics.newLeads}</div>
-            <div className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="text-2xl font-bold text-primary">{metrics.newLeads}</div>
+            <div className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'عملاء جدد' : 'New Leads'}
             </div>
           </div>
 
           <div className="glass-card p-6 text-center">
             <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{metrics.qualifiedLeads}</div>
-            <div className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="text-2xl font-bold text-primary">{metrics.qualifiedLeads}</div>
+            <div className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'عملاء مؤهلون' : 'Qualified'}
             </div>
           </div>
 
           <div className="glass-card p-6 text-center">
             <BarChart3 className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{metrics.avgScore}%</div>
-            <div className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="text-2xl font-bold text-primary">{metrics.avgScore}%</div>
+            <div className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'متوسط النقاط' : 'Avg Score'}
             </div>
           </div>
 
           <div className="glass-card p-6 text-center">
             <TrendingUp className="w-8 h-8 text-green-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{metrics.conversionRate}%</div>
-            <div className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="text-2xl font-bold text-primary">{metrics.conversionRate}%</div>
+            <div className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'معدل التحويل' : 'Conversion'}
             </div>
           </div>
 
           <div className="glass-card p-6 text-center">
             <AlertCircle className="w-8 h-8 text-red-400 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-white">{metrics.highPriorityLeads}</div>
-            <div className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="text-2xl font-bold text-primary">{metrics.highPriorityLeads}</div>
+            <div className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'أولوية عالية' : 'High Priority'}
             </div>
           </div>
@@ -345,7 +345,7 @@ const LeadDashboard: React.FC = () => {
         <div className="glass-card p-6 mb-8">
           <div className="flex items-center space-x-4 rtl:space-x-reverse mb-4">
             <Filter className="w-5 h-5 text-gray-400" />
-            <h3 className={`text-lg font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h3 className={`text-lg font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'تصفية النتائج' : 'Filter Results'}
             </h3>
           </div>
@@ -354,7 +354,7 @@ const LeadDashboard: React.FC = () => {
             <select
               value={filters.status}
               onChange={(e) => setFilters(prev => ({ ...prev, status: e.target.value }))}
-              className={`px-3 py-2 bg-black/50 border border-gray-700 rounded-lg text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`px-3 py-2 bg-background/50 border border-gray-700 rounded-lg text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               <option value="all">{language === 'ar' ? 'جميع الحالات' : 'All Status'}</option>
               <option value="new">{language === 'ar' ? 'جديد' : 'New'}</option>
@@ -367,7 +367,7 @@ const LeadDashboard: React.FC = () => {
             <select
               value={filters.priority}
               onChange={(e) => setFilters(prev => ({ ...prev, priority: e.target.value }))}
-              className={`px-3 py-2 bg-black/50 border border-gray-700 rounded-lg text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`px-3 py-2 bg-background/50 border border-gray-700 rounded-lg text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               <option value="all">{language === 'ar' ? 'جميع الأولويات' : 'All Priority'}</option>
               <option value="URGENT">{language === 'ar' ? 'عاجل' : 'Urgent'}</option>
@@ -379,7 +379,7 @@ const LeadDashboard: React.FC = () => {
             <select
               value={filters.industry}
               onChange={(e) => setFilters(prev => ({ ...prev, industry: e.target.value }))}
-              className={`px-3 py-2 bg-black/50 border border-gray-700 rounded-lg text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`px-3 py-2 bg-background/50 border border-gray-700 rounded-lg text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               <option value="all">{language === 'ar' ? 'جميع الصناعات' : 'All Industries'}</option>
               <option value="restaurant">{language === 'ar' ? 'مطاعم' : 'Restaurant'}</option>
@@ -392,7 +392,7 @@ const LeadDashboard: React.FC = () => {
             <select
               value={filters.emirates}
               onChange={(e) => setFilters(prev => ({ ...prev, emirates: e.target.value }))}
-              className={`px-3 py-2 bg-black/50 border border-gray-700 rounded-lg text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`px-3 py-2 bg-background/50 border border-gray-700 rounded-lg text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               <option value="all">{language === 'ar' ? 'جميع الإمارات' : 'All Emirates'}</option>
               <option value="dubai">{language === 'ar' ? 'دبي' : 'Dubai'}</option>
@@ -404,7 +404,7 @@ const LeadDashboard: React.FC = () => {
             <select
               value={filters.scoreRange}
               onChange={(e) => setFilters(prev => ({ ...prev, scoreRange: e.target.value }))}
-              className={`px-3 py-2 bg-black/50 border border-gray-700 rounded-lg text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`px-3 py-2 bg-background/50 border border-gray-700 rounded-lg text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               <option value="all">{language === 'ar' ? 'جميع النقاط' : 'All Scores'}</option>
               <option value="0-30">{language === 'ar' ? '0-30 (منخفض)' : '0-30 (Low)'}</option>
@@ -448,7 +448,7 @@ const LeadDashboard: React.FC = () => {
                   <tr key={lead.id} className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div>
-                        <div className={`text-sm font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <div className={`text-sm font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {language === 'ar' && lead.company_name_ar ? lead.company_name_ar : lead.company_name}
                         </div>
                         <div className="flex items-center space-x-2 rtl:space-x-reverse text-xs text-gray-400">
@@ -459,7 +459,7 @@ const LeadDashboard: React.FC = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div>
-                        <div className={`text-sm text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <div className={`text-sm text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {lead.contact_name}
                         </div>
                         <div className="text-xs text-gray-400">{lead.email}</div>
@@ -469,7 +469,7 @@ const LeadDashboard: React.FC = () => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center space-x-2 rtl:space-x-reverse">
                         <Building className="w-4 h-4 text-gray-400" />
-                        <span className={`text-sm text-gray-300 capitalize ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <span className={`text-sm text-secondary capitalize ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {lead.industry}
                         </span>
                       </div>
@@ -552,7 +552,7 @@ const LeadDashboard: React.FC = () => {
 
         {/* Lead Detail Modal */}
         {selectedLead && (
-          <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="fixed inset-0 bg-neutral-900/80 flex items-center justify-center z-50 p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -560,12 +560,12 @@ const LeadDashboard: React.FC = () => {
               className="glass-card p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className={`text-xl font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h3 className={`text-xl font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar' ? 'تفاصيل العميل المحتمل' : 'Lead Details'}
                 </h3>
                 <button
                   onClick={() => setSelectedLead(null)}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-neutral-400 hover:text-primary transition-colors"
                 >
                   ×
                 </button>
@@ -582,7 +582,7 @@ const LeadDashboard: React.FC = () => {
                       <label className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'اسم الشركة' : 'Company Name'}
                       </label>
-                      <p className={`text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <p className={`text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' && selectedLead.company_name_ar ? selectedLead.company_name_ar : selectedLead.company_name}
                       </p>
                     </div>
@@ -598,7 +598,7 @@ const LeadDashboard: React.FC = () => {
                       <label className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'الإيرادات الشهرية' : 'Monthly Revenue'}
                       </label>
-                      <p className={`text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <p className={`text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {selectedLead.monthly_revenue_range}
                       </p>
                     </div>
@@ -606,7 +606,7 @@ const LeadDashboard: React.FC = () => {
                       <label className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'عدد الموظفين' : 'Employee Count'}
                       </label>
-                      <p className={`text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <p className={`text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {selectedLead.employee_count_range}
                       </p>
                     </div>
@@ -627,7 +627,7 @@ const LeadDashboard: React.FC = () => {
                       {selectedLead.ai_readiness_score}
                     </div>
                     <div>
-                      <p className={`text-white font-medium ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <p className={`text-primary font-medium ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {selectedLead.ai_readiness_score >= 70 ? (language === 'ar' ? 'جاهز للتكامل المتقدم' : 'Ready for Advanced Integration') :
                          selectedLead.ai_readiness_score >= 40 ? (language === 'ar' ? 'جاهز لتنفيذ الذكاء الاصطناعي' : 'Ready for AI Implementation') :
                          (language === 'ar' ? 'يحتاج بناء الأساس' : 'Needs Foundation Building')}
@@ -642,7 +642,7 @@ const LeadDashboard: React.FC = () => {
                 {/* Recommendations */}
                 {selectedLead.personalized_plan && selectedLead.personalized_plan.length > 0 && (
                   <div>
-                    <h4 className={`text-lg font-medium text-white mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <h4 className={`text-lg font-medium text-primary mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'التوصيات المخصصة' : 'Personalized Recommendations'}
                     </h4>
                     <div className="space-y-3">
@@ -658,10 +658,10 @@ const LeadDashboard: React.FC = () => {
                             </span>
                             <span className="text-xs text-gray-400">{rec.timeline}</span>
                           </div>
-                          <h5 className={`font-medium text-white mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                          <h5 className={`font-medium text-primary mb-1 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                             {language === 'ar' ? rec.titleAr : rec.title}
                           </h5>
-                          <p className={`text-sm text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                          <p className={`text-sm text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                             {rec.expectedROI}
                           </p>
                         </div>
@@ -674,7 +674,7 @@ const LeadDashboard: React.FC = () => {
                 <div className="flex space-x-4 rtl:space-x-reverse pt-4 border-t border-gray-700">
                   <a
                     href={`mailto:${selectedLead.email}?subject=Hikma Digital AI Consultation&body=Hello ${selectedLead.contact_name}, thank you for completing our AI readiness assessment...`}
-                    className={`flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                    className={`btn-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
                   >
                     <Mail className="w-4 h-4" />
                     <span>{language === 'ar' ? 'إرسال بريد إلكتروني' : 'Send Email'}</span>
@@ -685,7 +685,7 @@ const LeadDashboard: React.FC = () => {
                       href={`https://wa.me/${selectedLead.whatsapp_number.replace(/[^0-9]/g, '')}?text=Hello ${selectedLead.contact_name}, thank you for your interest in Hikma Digital...`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center space-x-2 rtl:space-x-reverse px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                      className={`btn-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>{language === 'ar' ? 'واتساب' : 'WhatsApp'}</span>

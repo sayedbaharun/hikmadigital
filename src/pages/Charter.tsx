@@ -151,7 +151,7 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
   };
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
@@ -159,16 +159,16 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl lg:text-3xl font-semibold tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'معتمد من ميثاق الإمارات' : 'UAE Charter Certified'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary">
                 {language === 'ar' ? 'أول منصة ذكاء اصطناعي تلبي جميع مبادئ ميثاق الإمارات الـ12' : 'First AI platform to meet all 12 UAE Charter principles'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'حكمة ديجيتال هي أول منصة ذكاء اصطناعي في الشرق الأوسط وشمال أفريقيا تلبي جميع مبادئ ميثاق الإمارات الـ12، مما يضمن الامتثال الكامل لجميع المعايير الأخلاقية والتقنية.'
                 : 'Hikma Digital is the first AI platform in MENA to MEET ALL 12 charter principles of the UAE, ensuring full compliance with all ethical and technical standards.'
@@ -179,7 +179,7 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
 
         {/* Logo Carousel */}
         <div className="mb-16">
-          <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-xl font-semibold text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'شركاؤنا الحكوميون والتنظيميون' : 'Our Government & Regulatory Partners'}
           </h2>
           
@@ -187,7 +187,7 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
             <div className="flex items-center justify-between mb-4">
               <button 
                 onClick={prevSlide}
-                className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                className="p-2 rounded-full bg-white/10 text-primary hover:bg-white/20 transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -195,7 +195,7 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
               </button>
               <button 
                 onClick={nextSlide}
-                className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                className="p-2 rounded-full bg-white/10 text-primary hover:bg-white/20 transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -237,7 +237,7 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
 
         {/* Charter Principles */}
         <div className="mb-16">
-          <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-xl font-semibold text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'مبادئ ميثاق الإمارات الـ12' : 'The 12 UAE Charter Principles'}
           </h2>
           
@@ -266,11 +266,11 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
                     </div>
                   </div>
 
-                  <h3 className={`text-lg font-medium text-white mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`text-lg font-medium text-primary mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {principle.title}
                   </h3>
                   
-                  <p className={`text-sm text-gray-300 mb-4 leading-relaxed font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <p className={`text-sm text-secondary mb-4 leading-relaxed font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {principle.description}
                   </p>
                 </motion.div>
@@ -290,10 +290,10 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
           className="text-center mt-16"
         >
           <div className="glass-card p-12">
-            <h2 className={`text-3xl font-light tracking-tight mb-6 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-xl font-semibold tracking-tight mb-6 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'هل تريد معرفة المزيد عن امتثالنا للميثاق؟' : 'Want to Learn More About Our Charter Compliance?'}
             </h2>
-            <p className={`text-lg font-light text-gray-300 mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg font-light text-secondary mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'تواصل مع فريقنا للحصول على معلومات مفصلة حول كيفية تلبية منصتنا لجميع متطلبات ميثاق الإمارات'
                 : 'Contact our team for detailed information on how our platform meets all UAE Charter requirements'
@@ -303,7 +303,7 @@ const Charter: React.FC<CharterProps> = ({ openContactForm }) => {
               onClick={() => openContactForm && openContactForm('general')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-primary font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               {language === 'ar' ? 'تواصل معنا' : 'Contact Us'}
             </motion.button>

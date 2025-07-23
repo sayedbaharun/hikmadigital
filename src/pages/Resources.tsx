@@ -95,7 +95,7 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
   const selectedResources = resources[selectedCategory] || resources.templates;
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -104,16 +104,16 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl lg:text-3xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'إتقان نمو الأعمال' : 'Master AI-Driven'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary">
                 {language === 'ar' ? 'المدفوع بالذكاء الاصطناعي' : 'Business Growth'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-xl text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'موارد شاملة وأدلة ورؤى لمجتمع الشركات الصغيرة والمتوسطة المتقدم في الذكاء الاصطناعي في دبي'
                 : 'Comprehensive resources, guides, and insights for Dubai\'s AI-forward SME community'
@@ -124,7 +124,7 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
 
         {/* Resource Categories */}
         <div className="mb-16">
-          <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-2xl text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'استكشف مواردنا' : 'Explore Our Resources'}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -141,9 +141,9 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
                   }`}
                 >
                   <div className={`p-3 bg-gradient-to-br ${category.color} rounded-lg mx-auto mb-3 w-fit`}>
-                    <IconComponent className="w-6 h-6 text-white" />
+                    <IconComponent className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className={`font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {category.name}
                   </h3>
                 </motion.button>
@@ -179,11 +179,11 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
                   </span>
                 </div>
 
-                <h3 className={`text-lg font-medium text-white mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h3 className={`text-lg font-medium text-primary mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {resource.title}
                 </h3>
                 
-                <p className={`text-gray-300 font-light mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <p className={`text-secondary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {resource.description}
                 </p>
 
@@ -191,34 +191,34 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
                 <div className="space-y-2 mb-4">
                   {resource.format && (
                     <div className="flex items-center justify-between text-sm">
-                      <span className={`text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <span className={`text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'التنسيق:' : 'Format:'}
                       </span>
-                      <span className="text-gray-300">{resource.format}</span>
+                      <span className="text-secondary">{resource.format}</span>
                     </div>
                   )}
                   {resource.languages && (
                     <div className="flex items-center justify-between text-sm">
-                      <span className={`text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <span className={`text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'اللغات:' : 'Languages:'}
                       </span>
-                      <span className="text-gray-300">{resource.languages}</span>
+                      <span className="text-secondary">{resource.languages}</span>
                     </div>
                   )}
                   {resource.pages && (
                     <div className="flex items-center justify-between text-sm">
-                      <span className={`text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <span className={`text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'الصفحات:' : 'Pages:'}
                       </span>
-                      <span className="text-gray-300">{resource.pages}</span>
+                      <span className="text-secondary">{resource.pages}</span>
                     </div>
                   )}
                   {resource.updated && (
                     <div className="flex items-center justify-between text-sm">
-                      <span className={`text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <span className={`text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'تحديث:' : 'Updated:'}
                       </span>
-                      <span className="text-gray-300">{resource.updated}</span>
+                      <span className="text-secondary">{resource.updated}</span>
                     </div>
                   )}
                 </div>
@@ -228,7 +228,7 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
                   onClick={() => openContactForm && openContactForm('general')}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`w-full flex items-center justify-center space-x-2 rtl:space-x-reverse px-4 py-2 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg transition-all duration-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                  className={`btn-primary w-full flex items-center justify-center space-x-2 rtl:space-x-reverse ${isRTL ? 'font-arabic' : 'font-inter'}`}
                 >
                   <Download className="w-4 h-4" />
                   <span>
@@ -249,10 +249,10 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
           className="glass-card p-8"
         >
           <div className="text-center mb-8">
-            <h2 className={`text-3xl font-light tracking-tight mb-4 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-2xl tracking-tight mb-4 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'الأحداث القادمة' : 'Upcoming Events'}
             </h2>
-            <p className={`text-lg font-light text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' 
                 ? 'انضم إلى مجتمعنا في الأحداث والندوات القادمة'
                 : 'Join our community in upcoming events and webinars'
@@ -265,15 +265,15 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
               <div className="flex items-center space-x-3 rtl:space-x-reverse mb-4">
                 <Calendar className="w-6 h-6 text-primary-400" />
                 <div>
-                  <h3 className={`font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'مجلس الذكاء الاصطناعي الأسبوعي' : 'Weekly AI Majlis'}
                   </h3>
-                  <p className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <p className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'الثلاثاء القادم، 7:00 مساءً' : 'Next Tuesday, 7:00 PM'}
                   </p>
                 </div>
               </div>
-              <p className={`text-gray-300 font-light mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-secondary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar'
                   ? 'مناقشة أحدث اتجاهات الذكاء الاصطناعي في الأعمال الإماراتية'
                   : 'Discussing latest AI trends in UAE business'
@@ -291,15 +291,15 @@ const Resources: React.FC<ResourcesProps> = ({ openContactForm }) => {
               <div className="flex items-center space-x-3 rtl:space-x-reverse mb-4">
                 <Calendar className="w-6 h-6 text-accent-400" />
                 <div>
-                  <h3 className={`font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`font-medium text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'ورشة عمل التحول الرقمي' : 'Digital Transformation Workshop'}
                   </h3>
-                  <p className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <p className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? '15 يناير، 2:00 ظهراً' : 'January 15, 2:00 PM'}
                   </p>
                 </div>
               </div>
-              <p className={`text-gray-300 font-light mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-secondary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar'
                   ? 'ورشة عمل عملية لتطبيق الذكاء الاصطناعي في عملك'
                   : 'Hands-on workshop for implementing AI in your business'

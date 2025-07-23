@@ -57,7 +57,7 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -66,16 +66,16 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
-              <span className="gradient-text font-bold">
+            <h1 className={`text-2xl lg:text-3xl font-semibold tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <span className="gradient-text">
                 {language === 'ar' ? 'هل أنت مستعد' : 'Ready to Transform'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary">
                 {language === 'ar' ? 'لتحويل عملك؟' : 'Your Business?'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'طرق متعددة للتواصل مع فريقنا من الذكاء الاصطناعي والخبراء البشريين وبدء رحلتك'
                 : 'Multiple ways to connect with our human-AI team and begin your journey'
@@ -86,7 +86,7 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
 
         {/* Contact Type Selector */}
         <div className="mb-16">
-          <h2 className={`text-2xl font-light text-center mb-8 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h2 className={`text-xl font-semibold text-center mb-8 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'اختر طريقة التواصل' : 'Choose Your Contact Method'}
           </h2>
           <div className="grid md:grid-cols-1 gap-6">
@@ -98,17 +98,17 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedContactType(option.id)}
-                  className={`glass-card glass-card-hover p-6 text-center transition-all duration-300 ${
-                    selectedContactType === option.id ? 'ring-2 ring-primary-500 bg-primary-500/10' : ''
+                  className={`card p-6 text-center transition-all duration-300 ${
+                    selectedContactType === option.id ? 'ring-2 ring-primary' : ''
                   }`}
                 >
                   <div className={`p-4 bg-gradient-to-br ${option.color} rounded-lg mx-auto mb-4 w-fit`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className={`text-lg font-medium text-white mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`text-base font-semibold text-primary mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {option.title}
                   </h3>
-                  <p className={`text-gray-300 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <p className={`text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {option.description}
                   </p>
                 </motion.button>
@@ -129,7 +129,7 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
           <div className="lg:col-span-2">
             {selectedContactType === 'immediate' && (
               <div className="space-y-6">
-                <h3 className={`text-2xl font-medium text-white mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h3 className={`text-xl font-semibold text-primary mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar' ? 'خيارات الدعم الفوري' : 'Immediate Support Options'}
                 </h3>
                 
@@ -141,18 +141,18 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="glass-card p-6 hover:bg-white/10 transition-all duration-300"
+                      className="card p-6 hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-4 rtl:space-x-reverse">
-                          <div className="p-3 bg-primary-500/20 rounded-lg">
-                            <IconComponent className="w-6 h-6 text-primary-400" />
+                          <div className="p-3 bg-primary/10 rounded-lg">
+                            <IconComponent className="w-6 h-6 text-primary" />
                           </div>
                           <div>
-                            <h4 className={`text-lg font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                            <h4 className={`text-base font-semibold text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                               {support.title}
                             </h4>
-                            <p className={`text-gray-300 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                            <p className={`text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                               {support.description}
                             </p>
                           </div>
@@ -161,15 +161,15 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
                         <div className="flex items-center space-x-4 rtl:space-x-reverse">
                           <div className="flex items-center space-x-2 rtl:space-x-reverse">
                             <div className={`w-2 h-2 rounded-full ${
-                              support.status === 'online' ? 'bg-green-400 animate-pulse' : 'bg-yellow-400'
+                              support.status === 'online' ? 'bg-emerald animate-pulse' : 'bg-gold'
                             }`}></div>
-                            <span className="text-sm text-gray-400 capitalize">{support.status}</span>
+                            <span className="text-sm text-secondary capitalize">{support.status}</span>
                           </div>
                           <motion.button
                             onClick={() => openContactForm('general')}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className={`px-4 py-2 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg transition-all duration-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                            className={`btn-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
                           >
                             {support.action}
                           </motion.button>
@@ -185,43 +185,43 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Office Information */}
-            <div className="glass-card p-6">
-              <h4 className={`text-lg font-medium text-white mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="card p-6">
+              <h4 className={`text-base font-semibold text-primary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar' ? 'معلومات المكتب' : 'Office Information'}
               </h4>
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3 rtl:space-x-reverse">
-                  <MapPin className="w-5 h-5 text-primary-400 mt-1" />
+                  <MapPin className="w-5 h-5 text-primary mt-1" />
                   <div>
-                    <p className={`text-white font-medium ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-primary font-semibold ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'واحة دبي للسيليكون' : 'Dubai Silicon Oasis'}
                     </p>
-                    <p className={`text-gray-300 text-sm font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-secondary text-sm ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'تكنوهب 1،2، DDP A5، واحة دبي للسيليكون - دبي' : 'Technohub 1,2, DDP A5, Dubai Silicon Oasis - Dubai'}
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3 rtl:space-x-reverse">
-                  <Clock className="w-5 h-5 text-accent-400 mt-1" />
+                  <Clock className="w-5 h-5 text-gold mt-1" />
                   <div>
-                    <p className={`text-white font-medium ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-primary font-semibold ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'ساعات العمل' : 'Office Hours'}
                     </p>
-                    <p className={`text-gray-300 text-sm font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-secondary text-sm ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'الاثنين - السبت: 9:00 ص - 7:00 م' : 'Monday - Saturday: 9:00 AM - 7:00 PM'}
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3 rtl:space-x-reverse">
-                  <Globe className="w-5 h-5 text-green-400 mt-1" />
+                  <Globe className="w-5 h-5 text-emerald mt-1" />
                   <div>
-                    <p className={`text-white font-medium ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-primary font-semibold ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'اللغات' : 'Languages'}
                     </p>
-                    <p className={`text-gray-300 text-sm font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                    <p className={`text-secondary text-sm ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                       {language === 'ar' ? 'العربية، الإنجليزية' : 'Arabic, English'}
                     </p>
                   </div>
@@ -230,31 +230,31 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
             </div>
 
             {/* Quick Stats */}
-            <div className="glass-card p-6">
-              <h4 className={`text-lg font-medium text-white mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <div className="card p-6">
+              <h4 className={`text-base font-semibold text-primary mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar' ? 'إحصائيات سريعة' : 'Quick Stats'}
               </h4>
               
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className={`text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <span className={`text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'متوسط وقت الاستجابة' : 'Average Response Time'}
                   </span>
-                  <span className="text-primary-400 font-medium">{"< 5 min"}</span>
+                  <span className="text-primary font-semibold">{"< 5 min"}</span>
                 </div>
                 
                 <div className="flex justify-between items-center">
-                  <span className={`text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <span className={`text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'رضا العملاء' : 'Customer Satisfaction'}
                   </span>
-                  <span className="text-accent-400 font-medium">98%</span>
+                  <span className="text-gold font-semibold">98%</span>
                 </div>
                 
                 <div className="flex justify-between items-center">
-                  <span className={`text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <span className={`text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'الشركات المحولة' : 'Businesses Transformed'}
                   </span>
-                  <span className="text-green-400 font-medium">500+</span>
+                  <span className="text-emerald font-semibold">500+</span>
                 </div>
               </div>
             </div>
@@ -267,23 +267,23 @@ const Contact: React.FC<ContactProps> = ({ openContactForm }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="glass-card p-8"
+          className="card p-8"
         >
-          <h3 className={`text-2xl font-medium text-white mb-6 text-center ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+          <h3 className={`text-xl font-semibold text-primary mb-6 text-center ${isRTL ? 'font-arabic' : 'font-inter'}`}>
             {language === 'ar' ? 'زرنا في واحة دبي للسيليكون' : 'Visit Us at Dubai Silicon Oasis'}
           </h3>
           
-          <div className="bg-gray-800 rounded-lg h-64 flex items-center justify-center">
+          <div className="bg-neutral-100 rounded-lg h-64 flex items-center justify-center">
             <div className="text-center">
-              <MapPin className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <p className={`text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
+              <p className={`text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar' ? 'تكنوهب 1،2، DDP A5، واحة دبي للسيليكون - دبي' : 'Technohub 1,2, DDP A5, Dubai Silicon Oasis - Dubai'}
               </p>
             </div>
           </div>
           
           <div className="mt-6 text-center">
-            <p className={`text-gray-300 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'مواقف مجانية متاحة • وصول سهل بالمترو • مقهى في الموقع'
                 : 'Free parking available • Easy metro access • On-site café'

@@ -93,7 +93,7 @@ const FullViewportHero: React.FC<FullViewportHeroProps> = ({ openContactForm }) 
             variants={fadeInVariants}
             initial="hidden"
             animate="visible"
-            className={`text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-tight ${
+            className={`text-2xl md:text-3xl font-semibold text-white leading-tight ${
               isRTL ? 'font-arabic' : ''
             }`}
           >

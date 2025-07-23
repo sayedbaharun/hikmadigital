@@ -581,7 +581,7 @@ const Assessment: React.FC = () => {
 
   if (results) {
     return (
-      <div className="min-h-screen bg-black py-20">
+      <div className="min-h-screen bg-background py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Results Header */}
           <motion.div
@@ -591,17 +591,17 @@ const Assessment: React.FC = () => {
             className="text-center mb-12"
           >
             <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 mb-6 relative">
-              <span className="text-4xl font-light text-white">{results.aiReadinessScore}</span>
+              <span className="text-2xl font-semibold text-primary">{results.aiReadinessScore}</span>
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-white" />
+                <CheckCircle className="w-5 h-5 text-primary" />
               </div>
             </div>
-            <h1 className={`text-3xl lg:text-4xl font-light mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-xl lg:text-2xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'نقاط جاهزية الذكاء الاصطناعي' : 'Your AI Readiness Score'}
               </span>
             </h1>
-            <p className={`text-xl text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-xl text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {results.aiReadinessScore < 30 
                 ? (language === 'ar' ? 'مرحلة بناء الأساس' : 'Foundation Building Phase')
                 : results.aiReadinessScore < 60 
@@ -637,7 +637,7 @@ const Assessment: React.FC = () => {
 
           {/* Personalized Recommendations */}
           <div className="mb-12">
-            <h2 className={`text-2xl font-light mb-8 text-center text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-2xl  mb-8 text-center text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'توصيات مخصصة لعملك' : 'Personalized Recommendations for Your Business'}
             </h2>
             <div className="grid lg:grid-cols-2 gap-6">
@@ -661,10 +661,10 @@ const Assessment: React.FC = () => {
                     <span className="text-sm text-gray-400">{recommendation.timeline}</span>
                   </div>
                   
-                  <h3 className={`text-xl font-medium text-white mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h3 className={`text-xl font-medium text-primary mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? recommendation.titleAr : recommendation.title}
                   </h3>
-                  <p className={`text-gray-300 mb-4 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <p className={`text-secondary mb-4  ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? recommendation.descriptionAr : recommendation.description}
                   </p>
                   
@@ -707,10 +707,10 @@ const Assessment: React.FC = () => {
 
           {/* CTA Section */}
           <div className="glass-card p-8 text-center">
-            <h3 className={`text-2xl font-light mb-4 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h3 className={`text-2xl  mb-4 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'هل أنت مستعد لبدء تحولك؟' : 'Ready to Start Your Transformation?'}
             </h3>
-            <p className={`text-gray-300 mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-secondary mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'احجز استشارة مجانية مدتها 30 دقيقة مع خبراء الذكاء الاصطناعي في دبي'
                 : 'Schedule a free 30-minute consultation with our Dubai AI specialists'
@@ -721,7 +721,7 @@ const Assessment: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={initiateWhatsAppConsultation}
-                className={`bg-green-600 text-white font-medium rounded-lg px-6 py-3 hover:bg-green-700 transition-all duration-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                className={`btn-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
               >
                 {language === 'ar' ? 'استشارة فورية عبر واتساب' : 'Instant WhatsApp Consultation'}
               </motion.button>
@@ -742,7 +742,7 @@ const Assessment: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -754,28 +754,28 @@ const Assessment: React.FC = () => {
             <div className="flex items-center justify-center space-x-4 rtl:space-x-reverse mb-6">
               <div className="flex items-center px-4 py-2 glass-card">
                 <TrendingUp className="w-4 h-4 text-green-400 mr-2 rtl:ml-2 rtl:mr-0" />
-                <span className={`text-sm font-light text-green-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <span className={`text-sm  text-green-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {leadCounter.toLocaleString()} {language === 'ar' ? 'شركة تم تقييمها' : 'SMEs Assessed'}
                 </span>
               </div>
               <div className="flex items-center px-4 py-2 glass-card">
                 <Sparkles className="w-4 h-4 text-primary-400 mr-2 rtl:ml-2 rtl:mr-0" />
-                <span className={`text-sm font-light text-primary-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <span className={`text-sm  text-primary-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar' ? 'مجاني 100%' : '100% Free'}
                 </span>
               </div>
             </div>
             
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl lg:text-3xl font-semibold tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'تقييم جاهزية الذكاء الاصطناعي' : 'Dubai SME AI Readiness'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary ">
                 {language === 'ar' ? 'للشركات الصغيرة والمتوسطة في دبي' : 'Assessment'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-xl  text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'اكتشف إمكانات عملك للتحول بالذكاء الاصطناعي واحصل على خطة مخصصة للنجاح في السوق الإماراتي'
                 : 'Discover your business potential for AI transformation and get a personalized roadmap for success in the UAE market'
@@ -812,14 +812,14 @@ const Assessment: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="glass-card p-8"
           >
-            <h2 className={`text-2xl font-medium text-white mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-2xl font-medium text-primary mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {assessmentSteps[currentStep].title}
             </h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {assessmentSteps[currentStep].questions.map((question, index) => (
                 <div key={question.name}>
-                  <label className={`block text-sm font-medium text-gray-300 mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <label className={`block text-sm font-medium text-secondary mb-3 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {question.label}
                     {question.required && <span className="text-red-400 ml-1">*</span>}
                   </label>
@@ -827,7 +827,7 @@ const Assessment: React.FC = () => {
                   {question.type === 'select' && (
                     <select
                       {...register(question.name, { required: question.required })}
-                      className={`w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                      className={`w-full px-4 py-3 bg-background/50 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
                     >
                       <option value="">
                         {language === 'ar' ? 'اختر خياراً' : 'Select an option'}
@@ -844,7 +844,7 @@ const Assessment: React.FC = () => {
                     <input
                       type="text"
                       {...register(question.name, { required: question.required })}
-                      className={`w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
+                      className={`w-full px-4 py-3 bg-background/50 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-primary placeholder-neutral-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
                       dir="auto"
                     />
                   )}
@@ -859,7 +859,7 @@ const Assessment: React.FC = () => {
                           message: language === 'ar' ? 'بريد إلكتروني غير صحيح' : 'Invalid email address'
                         }
                       })}
-                      className={`w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
+                      className={`w-full px-4 py-3 bg-background/50 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-primary placeholder-neutral-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
                     />
                   )}
 
@@ -867,7 +867,7 @@ const Assessment: React.FC = () => {
                     <input
                       type="tel"
                       {...register(question.name, { required: question.required })}
-                      className={`w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
+                      className={`w-full px-4 py-3 bg-background/50 border border-neutral-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-primary placeholder-neutral-400 ${isRTL ? 'font-arabic text-right' : 'font-inter'}`}
                       placeholder="+971 50 123 4567"
                     />
                   )}
@@ -910,15 +910,15 @@ const Assessment: React.FC = () => {
                       {question.options?.map((option) => (
                         <label
                           key={option.value}
-                          className="flex items-center space-x-3 rtl:space-x-reverse p-3 border border-gray-700 rounded-lg hover:bg-white/5 cursor-pointer transition-colors"
+                          className="flex items-center space-x-3 rtl:space-x-reverse p-3 border border-neutral-200 rounded-lg hover:bg-white/5 cursor-pointer transition-colors"
                         >
                           <input
                             type="checkbox"
                             value={option.value}
                             {...register(question.name, { required: question.required })}
-                            className="w-4 h-4 text-primary-600 bg-gray-700 border-gray-600 rounded focus:ring-primary-500"
+                            className="w-4 h-4 text-primary-600 bg-gray-700 border-gray-600 rounded focus:ring-primary"
                           />
-                          <span className={`text-sm text-gray-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                          <span className={`text-sm text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                             {option.label}
                           </span>
                         </label>
@@ -940,7 +940,7 @@ const Assessment: React.FC = () => {
                   type="button"
                   onClick={goBack}
                   disabled={currentStep === 0}
-                  className={`flex items-center space-x-2 rtl:space-x-reverse px-6 py-3 glass-card glass-card-hover text-gray-300 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                  className={`flex items-center space-x-2 rtl:space-x-reverse px-6 py-3 glass-card glass-card-hover text-secondary rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${isRTL ? 'font-arabic' : 'font-inter'}`}
                 >
                   <ArrowLeft className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
                   <span>{language === 'ar' ? 'السابق' : 'Previous'}</span>
@@ -949,7 +949,7 @@ const Assessment: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isCalculating}
-                  className={`flex items-center space-x-2 rtl:space-x-reverse px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                  className={`flex items-center space-x-2 rtl:space-x-reverse px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-500 text-primary font-medium rounded-lg hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${isRTL ? 'font-arabic' : 'font-inter'}`}
                 >
                   {isCalculating ? (
                     <>

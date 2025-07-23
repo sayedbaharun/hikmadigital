@@ -12,7 +12,7 @@ const DatabasePage: React.FC<DatabasePageProps> = ({ openContactForm }) => {
   const { language, isRTL } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-black py-20">
+    <div className="min-h-screen bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -21,16 +21,16 @@ const DatabasePage: React.FC<DatabasePageProps> = ({ openContactForm }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className={`text-4xl lg:text-6xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h1 className={`text-2xl lg:text-3xl font-extralight tracking-tight mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               <span className="gradient-text font-bold">
                 {language === 'ar' ? 'قاعدة البيانات الإنتاجية' : 'Production Database'}
               </span>
               <br />
-              <span className="text-white font-light">
+              <span className="text-primary">
                 {language === 'ar' ? 'لحكمة ديجيتال' : 'for Hikma Digital'}
               </span>
             </h1>
-            <p className={`text-xl font-light text-gray-300 max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-xl text-secondary max-w-3xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'نظام قاعدة بيانات شامل لإدارة العملاء وتتبع المحادثات وتحليل الأعمال'
                 : 'Comprehensive database system for customer management, conversation tracking, and business analytics'
@@ -78,12 +78,12 @@ const DatabasePage: React.FC<DatabasePageProps> = ({ openContactForm }) => {
                 className="glass-card p-6 text-center"
               >
                 <div className={`p-4 bg-gradient-to-br ${feature.color} rounded-lg mx-auto mb-4 w-fit`}>
-                  <IconComponent className="w-8 h-8 text-white" />
+                  <IconComponent className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className={`text-lg font-medium text-white mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h3 className={`text-lg font-medium text-primary mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {feature.title}
                 </h3>
-                <p className={`text-gray-300 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <p className={`text-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {feature.description}
                 </p>
               </motion.div>
@@ -103,10 +103,10 @@ const DatabasePage: React.FC<DatabasePageProps> = ({ openContactForm }) => {
           className="text-center mt-16"
         >
           <div className="glass-card p-12">
-            <h2 className={`text-3xl font-light tracking-tight mb-6 text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <h2 className={`text-2xl tracking-tight mb-6 text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar' ? 'هل تريد معرفة المزيد عن قاعدة البيانات؟' : 'Want to Learn More About Our Database?'}
             </h2>
-            <p className={`text-lg font-light text-gray-300 mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+            <p className={`text-lg text-secondary mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
               {language === 'ar'
                 ? 'تواصل مع فريقنا للحصول على معلومات مفصلة حول كيفية تخزين ومعالجة البيانات بشكل آمن'
                 : 'Contact our team for detailed information on how we securely store and process data'
@@ -116,7 +116,7 @@ const DatabasePage: React.FC<DatabasePageProps> = ({ openContactForm }) => {
               onClick={() => openContactForm && openContactForm('general')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 ${isRTL ? 'font-arabic' : 'font-inter'}`}
+              className={`btn-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
             >
               {language === 'ar' ? 'تواصل معنا' : 'Contact Us'}
             </motion.button>

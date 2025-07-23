@@ -145,7 +145,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-black to-accent-900/20" />
@@ -161,12 +161,12 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className={`text-4xl lg:text-6xl font-bold mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h1 className={`text-2xl lg:text-3xl font-semibold mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 <span className="gradient-text">
                   {language === 'ar' ? 'نظام الوكلاء الذكي المتعدد' : 'Multi-Agent Intelligence System'}
                 </span>
               </h1>
-              <p className={`text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 font-light ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-lg lg:text-xl text-secondary max-w-3xl mx-auto mb-8 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar'
                   ? 'وكلاء ذكاء اصطناعي متخصصون يعملون معاً لتحويل عملك. جاهزون للاستخدام أو قم ببناء وكيلك الخاص.'
                   : 'Specialized AI agents working together to transform your business. Ready to use or build your own.'}
@@ -177,7 +177,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                   onClick={() => document.getElementById('marketplace')?.scrollIntoView({ behavior: 'smooth' })}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 group ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                  className={`btn-primary inline-flex items-center group ${isRTL ? 'font-arabic' : 'font-inter'}`}
                 >
                   <Bot className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
                   {language === 'ar' ? 'ابدأ مع وكلاء جاهزين' : 'Start with Pre-built Agents'}
@@ -220,7 +220,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                       <div className="p-4 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-lg w-fit mx-auto mb-4">
                         <item.icon className="w-8 h-8 text-primary-400" />
                       </div>
-                      <h3 className={`text-lg font-medium text-white mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <h3 className={`text-base font-semibold text-primary mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {item.label}
                       </h3>
                       <p className="text-accent-400 font-bold">{item.value}</p>
@@ -242,12 +242,12 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className={`text-3xl lg:text-4xl font-bold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h2 className={`text-xl lg:text-2xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 <span className="gradient-text">
                   {language === 'ar' ? 'سوق الوكلاء الذكي' : 'AI Agent Marketplace'}
                 </span>
               </h2>
-              <p className={`text-lg text-gray-300 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-base text-secondary max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar'
                   ? 'اختر من وكلائنا المدربين مسبقاً أو امزج عدة وكلاء لإنشاء فريقك المثالي'
                   : 'Choose from our pre-trained agents or combine multiple agents to create your perfect team'}
@@ -269,12 +269,12 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className={`text-3xl lg:text-4xl font-bold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h2 className={`text-xl lg:text-2xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 <span className="gradient-text">
                   {language === 'ar' ? 'منشئ سير العمل المرئي' : 'Visual Workflow Builder'}
                 </span>
               </h2>
-              <p className={`text-lg text-gray-300 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-base text-secondary max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar'
                   ? 'اسحب وأفلت لإنشاء سير عمل معقد. لا حاجة للبرمجة.'
                   : 'Drag and drop to create complex workflows. No coding required.'}
@@ -293,7 +293,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               
               {/* Builder Header */}
               <div className="flex items-center justify-between mb-8">
-                <h3 className={`text-xl font-semibold text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h3 className={`text-lg font-semibold text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar' ? 'منشئ سير العمل' : 'Workflow Builder'}
                 </h3>
                 <div className="flex items-center space-x-4 rtl:space-x-reverse">
@@ -301,16 +301,16 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                     <Play className="w-5 h-5 text-primary-400" />
                   </button>
                   <button className="p-2 glass-card glass-card-hover rounded-lg">
-                    <Pause className="w-5 h-5 text-gray-400" />
+                    <Pause className="w-5 h-5 text-neutral-400" />
                   </button>
                   <button className="p-2 glass-card glass-card-hover rounded-lg">
-                    <RefreshCw className="w-5 h-5 text-gray-400" />
+                    <RefreshCw className="w-5 h-5 text-neutral-400" />
                   </button>
                 </div>
               </div>
 
               {/* Canvas Area */}
-              <div className="bg-black/50 rounded-lg p-8 min-h-[400px] relative">
+              <div className="bg-neutral-100 rounded-lg p-8 min-h-[400px] relative">
                 {/* Grid Pattern */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="h-full w-full" style={{
@@ -332,7 +332,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                       <div className="p-2 bg-green-500/20 rounded-lg">
                         <Play className="w-5 h-5 text-green-400" />
                       </div>
-                      <span className={`text-white font-medium ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                      <span className={`text-primary font-semibold ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                         {language === 'ar' ? 'البداية' : 'Start'}
                       </span>
                     </div>
@@ -350,10 +350,10 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                         <MessageSquare className="w-5 h-5 text-blue-400" />
                       </div>
                       <div>
-                        <span className={`text-white font-medium block ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <span className={`text-primary font-semibold block ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {language === 'ar' ? 'حكمة' : 'Hikma'}
                         </span>
-                        <span className={`text-xs text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <span className={`text-xs text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {language === 'ar' ? 'خدمة العملاء' : 'Customer Service'}
                         </span>
                       </div>
@@ -371,10 +371,10 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                         <TrendingUp className="w-5 h-5 text-green-400" />
                       </div>
                       <div>
-                        <span className={`text-white font-medium block ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <span className={`text-primary font-semibold block ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {language === 'ar' ? 'رشيد' : 'Rashid'}
                         </span>
-                        <span className={`text-xs text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <span className={`text-xs text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {language === 'ar' ? 'المبيعات' : 'Sales'}
                         </span>
                       </div>
@@ -416,7 +416,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
 
                 {/* Templates Sidebar */}
                 <div className="absolute right-8 top-8 w-64">
-                  <h4 className={`text-sm font-medium text-gray-400 mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <h4 className={`text-sm font-medium text-neutral-400 mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'قوالب جاهزة' : 'Pre-built Templates'}
                   </h4>
                   <div className="space-y-3">
@@ -431,13 +431,13 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                       >
                         <div className="flex items-center space-x-3 rtl:space-x-reverse">
                           <div className={`p-2 bg-gradient-to-br ${template.color} rounded-lg bg-opacity-20`}>
-                            <template.icon className="w-5 h-5 text-white" />
+                            <template.icon className="w-5 h-5 text-primary" />
                           </div>
                           <div className="flex-1">
-                            <h5 className={`text-sm font-medium text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                            <h5 className={`text-sm font-semibold text-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                               {template.name}
                             </h5>
-                            <p className={`text-xs text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                            <p className={`text-xs text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                               {template.steps} {language === 'ar' ? 'خطوات' : 'steps'}
                             </p>
                           </div>
@@ -451,10 +451,10 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               {/* Builder Footer */}
               <div className="mt-8 flex items-center justify-between">
                 <div className="flex items-center space-x-4 rtl:space-x-reverse">
-                  <button className={`px-4 py-2 glass-card glass-card-hover text-gray-400 rounded-lg ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <button className={`btn-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'حفظ كمسودة' : 'Save Draft'}
                   </button>
-                  <button className={`px-4 py-2 glass-card glass-card-hover text-gray-400 rounded-lg ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <button className={`btn-secondary ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {language === 'ar' ? 'معاينة' : 'Preview'}
                   </button>
                 </div>
@@ -462,7 +462,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                   onClick={() => openContactForm && openContactForm('general')}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                  className={`btn-primary ${isRTL ? 'font-arabic' : 'font-inter'}`}
                 >
                   {language === 'ar' ? 'نشر سير العمل' : 'Deploy Workflow'}
                 </motion.button>
@@ -477,7 +477,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               viewport={{ once: true }}
               className="mt-12 text-center"
             >
-              <p className={`text-gray-400 mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-neutral-400 mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar' 
                   ? 'تحتاج إلى حل مخصص أكثر تعقيداً؟'
                   : 'Need a more complex custom solution?'}
@@ -506,12 +506,12 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className={`text-3xl lg:text-4xl font-bold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h2 className={`text-xl lg:text-2xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 <span className="gradient-text">
                   {language === 'ar' ? 'أداء الوكلاء المباشر' : 'Live Agent Performance'}
                 </span>
               </h2>
-              <p className={`text-lg text-gray-300 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-base text-secondary max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar'
                   ? 'شاهد تأثير وكلائنا الذكيين في الوقت الفعلي'
                   : 'Watch the real-time impact of our AI agents'}
@@ -569,7 +569,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                   <h3 className={`text-3xl font-bold text-white mb-2 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {metric.value}{metric.suffix}
                   </h3>
-                  <p className={`text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <p className={`text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     {metric.label}
                   </p>
 
@@ -603,12 +603,12 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className={`text-3xl lg:text-4xl font-bold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <h2 className={`text-xl lg:text-2xl font-semibold mb-4 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 <span className="gradient-text">
                   {language === 'ar' ? 'قصص نجاح عملائنا' : 'Client Success Stories'}
                 </span>
               </h2>
-              <p className={`text-lg text-gray-300 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+              <p className={`text-base text-secondary max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                 {language === 'ar'
                   ? 'شركات في دبي تحولت بفضل وكلائنا الذكيين'
                   : 'Dubai businesses transformed by our AI agents'}
@@ -634,7 +634,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                         <h4 className={`font-semibold text-white ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {testimonial.name}
                         </h4>
-                        <p className={`text-sm text-gray-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                        <p className={`text-sm text-neutral-400 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                           {testimonial.role}
                         </p>
                       </div>
@@ -646,7 +646,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                     </div>
                   </div>
 
-                  <p className={`text-gray-300 italic ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                  <p className={`text-secondary italic ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                     "{testimonial.content}"
                   </p>
                 </motion.div>
@@ -668,12 +668,12 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 to-accent-900/20" />
               
               <div className="relative">
-                <h2 className={`text-3xl lg:text-4xl font-bold mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <h2 className={`text-xl lg:text-2xl font-semibold mb-6 ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   <span className="gradient-text">
                     {language === 'ar' ? 'ابدأ رحلة التحول الذكي' : 'Start Your AI Transformation Journey'}
                   </span>
                 </h2>
-                <p className={`text-lg text-gray-300 mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
+                <p className={`text-lg text-secondary mb-8 max-w-2xl mx-auto ${isRTL ? 'font-arabic' : 'font-inter'}`}>
                   {language === 'ar'
                     ? 'انضم إلى مئات الشركات في دبي التي تستخدم وكلاء حكمة الذكيين لتحسين أعمالهم'
                     : 'Join hundreds of Dubai businesses using Hikma\'s AI agents to enhance their operations'}
@@ -684,7 +684,7 @@ const AIAgents: React.FC<AIAgentsProps> = ({ openContactForm }) => {
                     onClick={() => openContactForm && openContactForm('general')}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-medium rounded-lg glow-effect hover:shadow-xl transition-all duration-300 group ${isRTL ? 'font-arabic' : 'font-inter'}`}
+                    className={`btn-primary inline-flex items-center group ${isRTL ? 'font-arabic' : 'font-inter'}`}
                   >
                     <Sparkles className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
                     {language === 'ar' ? 'احجز عرضاً توضيحياً' : 'Book Agent Demo'}

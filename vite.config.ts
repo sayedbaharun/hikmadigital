@@ -16,4 +16,16 @@ export default defineConfig({
   define: {
     'process.env.OPENAI_API_KEY': JSON.stringify(process.env.OPENAI_API_KEY || 'demo-key'),
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui': ['framer-motion', 'lucide-react', 'react-hot-toast'],
+          'forms': ['react-hook-form'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
 });
