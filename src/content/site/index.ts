@@ -1,0 +1,1 @@
+export { clientsContent } from './clients';
