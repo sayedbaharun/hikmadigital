@@ -2,28 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Apple-inspired Design System */
+
 @layer base {
-  /* Steve Jobs Level Precision */
+  :root {
+    /* Light theme colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 212 95% 68%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 212 95% 68%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
   html {
     @apply scroll-smooth;
   }
-  
+
   body {
-    @apply bg-white text-text-primary antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: ltr;
+  }
+
+  [dir="rtl"] {
+    font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
   }
   
   /* Perfect Typography Hierarchy */
   h1 {
-    @apply text-3xl font-semibold tracking-tight;
+    @apply text-4xl font-semibold tracking-tight;
   }
   
   h2 {
-    @apply text-2xl font-semibold tracking-tight;
+    @apply text-3xl font-semibold tracking-tight;
   }
   
   h3 {
-    @apply text-xl font-semibold;
+    @apply text-2xl font-semibold;
   }
   
   p {
@@ -37,41 +115,59 @@
 }
 
 @layer components {
-  /* Perfect Button System - 2 Variants Only */
+  /* Clean card component */
+  .card-elegant {
+    @apply bg-card border border-border rounded-xl shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+  
+  /* Text gradients using semantic colors */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-bold;
+  }
+  
+  /* Background gradients */
+  .bg-gradient-hero {
+    @apply bg-gradient-to-br from-background via-secondary/20 to-muted/30;
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+  
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  /* Legacy support - migrate these gradually */
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 font-normal rounded-lg transition-opacity duration-200;
-    height: 48px; /* Exact height */
+    height: 48px;
   }
   
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-600;
+    @apply btn bg-primary text-primary-foreground hover:bg-primary/90;
   }
   
   .btn-secondary {
-    @apply btn bg-transparent text-gold border border-gold hover:bg-gold hover:text-white;
-  }
-  
-  /* Minimal Card - Only When Necessary */
-  .card {
-    @apply bg-white border border-neutral-200 rounded-lg;
-  }
-  
-  /* Focus States - Accessible */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2;
-  }
-  
-  /* Perfect Spacing Classes */
-  .section {
-    @apply py-12 md:py-16;
+    @apply btn bg-secondary text-secondary-foreground hover:bg-secondary/80;
   }
   
   .container-custom {
     @apply max-w-4xl mx-auto px-4;
   }
+  
+  .section {
+    @apply py-12 md:py-16;
+  }
 }
 
 @layer utilities {
+  /* Clean shadows for Apple-style depth */
+  .shadow-gold {
+    box-shadow: 0 4px 12px hsl(var(--primary) / 0.15);
+  }
+  
   /* Remove any visual noise */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -82,13 +178,13 @@
     scrollbar-width: none;
   }
   
-  /* Missing utility classes */
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary to-primary-600 bg-clip-text text-transparent;
+  /* Glass card component */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-lg shadow-sm;
   }
   
-  .uae-badge {
-    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-uae-red/10 text-uae-red border border-uae-red/20;
+  .glass-card-hover {
+    @apply hover:bg-card/90 hover:shadow-md transition-all duration-200;
   }
   
   /* Font utility classes */
@@ -100,17 +196,19 @@
     font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
   }
   
-  /* Glass card component */
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-sm border border-neutral-200 rounded-lg shadow-sm;
+  /* UAE Badge */
+  .uae-badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-uae-red/10 text-uae-red border border-uae-red/20;
   }
-  
-  .glass-card-hover {
-    @apply hover:bg-white/90 hover:shadow-md transition-all duration-200;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
-  
-  /* Glow effect */
-  .glow-effect {
-    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -48,7 +48,7 @@ function App() {
           <div className="flex-grow">
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/" element={<Homepage openContactForm={openContactForm} />} />
+                <Route path="/" element={<Homepage />} />
                 <Route path="/demo" element={<Demo openContactForm={openContactForm} />} />
                 <Route path="/team" element={<Team openContactForm={openContactForm} />} />
                 <Route path="/charter" element={<Charter openContactForm={openContactForm} />} />
